@@ -551,14 +551,9 @@
 
     <!-- MAIN HEADER NAVIGATION WITH LOGO HOLDER -->
     <header class="header-nav">
-        <div class="logo-container">
-            <div class="logo-holder">
-                <img src="logo.png" alt="Sinpro Building Maintenance Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('alt-logo-text').style.display='block';">
-                <div id="alt-logo-text" style="display:none; font-weight:800; font-size:1.3rem; color:var(--text-dark);">
-                    SINPRO <span style="color:var(--primary-orange);">MAINTENANCE</span>
-                </div>
-            </div>
-        </div>
+        <a href="#home" onclick="switchPage('home')" class="logo-container">
+            <img src="logo.png" alt="Sinpro Building Maintenance Logo" class="logo-img">
+        </a>
 
         <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
 
