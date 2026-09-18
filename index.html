@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinpro Building Maintenance | Sydney & Melbourne Property Care</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FAF6F0',
+                        espresso: '#2D1E18',
+                        'espresso-light': '#3D2B23',
+                        'espresso-dark': '#1F1410',
+                        'orange-primary': '#F26522',
+                        'orange-hover': '#D95314',
+                        peach: '#F8C67B',
+                        charcoal: '#1A110E',
+                        'sand-light': '#F3ECE3'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft-card': '0 10px 30px -5px rgba(45, 30, 24, 0.08)',
+                        'orange-glow': '0 8px 25px -4px rgba(242, 101, 34, 0.4)'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #FAF6F0;
+            color: #1A110E;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF6F0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2D1E18;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #F26522;
+        }
+
+        /* Before/After Image Slider Styling */
+        .ba-slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.25rem;
+            user-select: none;
+        }
+        .ba-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .ba-slider .resize {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            overflow: hidden;
+        }
+        .ba-slider .handle {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            margin-left: -2px;
+            background: #F26522;
+            cursor: ew-resize;
+            z-index: 10;
+        }
+        .ba-slider .handle::after {
+            content: '↔';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: #F26522;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        /* Active Navigation Tab Pill */
+        .nav-link.active {
+            color: #F26522 !important;
+            font-weight: 700;
+            position: relative;
+        }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 3px;
+            background-color: #F26522;
+            border-radius: 99px;
+        }
+    </style>
+</head>
+<body class="antialiased text-charcoal flex flex-col min-h-screen">
+
+    <!-- Top Announcement & Quick Contact Bar -->
+    <header class="w-full z-50 sticky top-0 bg-cream border-b border-sand-light shadow-sm">
+        <div class="bg-espresso text-cream text-xs sm:text-sm py-2 px-4">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+                <div class="flex items-center gap-6">
+                    <a href="tel:0480858790" class="flex items-center gap-2 hover:text-peach transition-colors">
+                        <i class="fa-solid fa-phone text-orange-primary"></i>
+                        <span class="font-semibold">+61 480 858 790</span>
+                    </a>
+                    <a href="mailto:sinprocleaningsolutions@gmail.com" class="hidden md:flex items-center gap-2 hover:text-peach transition-colors">
+                        <i class="fa-solid fa-envelope text-orange-primary"></i>
+                        <span>sinprocleaningsolutions@gmail.com</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="bg-orange-primary/20 text-orange-primary text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider">
+                        Sydney & Melbourne Metro Coverage
+                    </span>
+                    <a href="https://www.facebook.com/profile.php?id=61584064917621" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-peach transition-colors" title="Follow us on Facebook">
+                        <i class="fa-brands fa-facebook text-base text-orange-primary"></i>
+                        <span class="hidden sm:inline text-xs">Facebook Page</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation Header -->
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 bg-espresso rounded-xl flex items-center justify-center text-orange-primary text-xl font-extrabold shadow-md group-hover:bg-orange-primary group-hover:text-cream transition-all duration-300">
+                    <i class="fa-solid fa-house-chimney-crack"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-espresso leading-none">
+                        SINPRO<span class="text-orange-primary">.</span>
+                    </span>
+                    <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-charcoal/70">
+                        Building Maintenance
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden lg:flex items-center gap-8 font-semibold text-sm">
+                <a href="#home" class="nav-link text-charcoal hover:text-orange-primary transition-colors py-1" id="nav-home">Home</a>
+                <a href="#services" class="nav-link text-charcoal hover:text-orange-primary transition-colors py-1" id="nav-services">Services Hub</a>
+                <a href="#locations" class="nav-link text-charcoal hover:text-orange-primary transition-colors py-1" id="nav-locations">Our Offices</a>
+                <a href="#gallery" class="nav-link text-charcoal hover:text-orange-primary transition-colors py-1" id="nav-gallery">Gallery & Proof</a>
+                <a href="#contact" class="nav-link text-charcoal hover:text-orange-primary transition-colors py-1" id="nav-contact">Contact Us</a>
+            </div>
+
+            <!-- Header Action Button -->
+            <div class="flex items-center gap-3">
+                <button onclick="openQuoteModal()" class="bg-orange-primary hover:bg-orange-hover text-white text-xs sm:text-sm font-bold px-5 py-3 rounded-full shadow-orange-glow hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <span>GET A FREE QUOTE</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg bg-sand-light text-espresso hover:text-orange-primary focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-cream border-b border-sand-light px-6 py-5 space-y-4">
+            <a href="#home" onclick="closeMobileMenu()" class="block text-base font-bold text-espresso hover:text-orange-primary">Home</a>
+            <a href="#services" onclick="closeMobileMenu()" class="block text-base font-bold text-espresso hover:text-orange-primary">Services Hub</a>
+            <a href="#locations" onclick="closeMobileMenu()" class="block text-base font-bold text-espresso hover:text-orange-primary">Our Offices (7 Suburbs)</a>
+            <a href="#gallery" onclick="closeMobileMenu()" class="block text-base font-bold text-espresso hover:text-orange-primary">Gallery & Reviews</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="block text-base font-bold text-espresso hover:text-orange-primary">Contact Us</a>
+            <div class="pt-2 border-t border-sand-light flex flex-col gap-2">
+                <a href="tel:0480858790" class="flex items-center gap-2 text-sm font-bold text-orange-primary">
+                    <i class="fa-solid fa-phone"></i> Call 0480 858 790
+                </a>
+                <a href="mailto:sinprocleaningsolutions@gmail.com" class="flex items-center gap-2 text-sm text-charcoal/80">
+                    <i class="fa-solid fa-envelope"></i> sinprocleaningsolutions@gmail.com
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN VIEWS CONTAINER -->
+    <main class="flex-grow">
+
+        <!-- ========================================== -->
+        <!-- PAGE 1: HOME PAGE VIEW (#home)             -->
+        <!-- ========================================== -->
+        <section id="view-home" class="page-view space-y-16 pb-16">
+            
+            <!-- Hero Split Banner -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    
+                    <!-- Hero Left Card (Dark Espresso Container) -->
+                    <div class="lg:col-span-7 bg-espresso text-cream rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-soft-card relative overflow-hidden">
+                        <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-orange-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+                        
+                        <div class="space-y-6 z-10">
+                            <!-- Eyebrow Badge -->
+                            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-primary/20 border border-orange-primary/30 text-peach text-xs font-extrabold uppercase tracking-wider">
+                                <span class="w-2 h-2 rounded-full bg-orange-primary animate-pulse"></span>
+                                SINPRO BUILDING MAINTENANCE
+                            </div>
+
+                            <!-- H1 Heading -->
+                            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                                Pristine Cleaning & Property Care Across <span class="text-orange-primary">Sydney</span> & <span class="text-peach">Melbourne</span>
+                            </h1>
+
+                            <p class="text-cream/80 text-base sm:text-lg max-w-xl font-normal leading-relaxed">
+                                Complete residential and commercial property maintenance. From high-power gutter vacuuming and window clearing to complete roof restorations.
+                            </p>
+
+                            <!-- Highlights Checkmarks -->
+                            <div class="grid grid-cols-2 gap-3 text-sm font-medium pt-2">
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-orange-primary"></i>
+                                    <span>Fully Insured Staff</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-orange-primary"></i>
+                                    <span>Working at Heights Cert</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-orange-primary"></i>
+                                    <span>7 Metro Hub Locations</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-orange-primary"></i>
+                                    <span>100% Satisfaction Guarantee</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Founder Profile & Social Strip -->
+                        <div class="pt-8 mt-8 border-t border-cream/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 z-10">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 rounded-full bg-peach/20 border-2 border-orange-primary flex items-center justify-center text-orange-primary font-bold text-xl overflow-hidden">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-base font-bold text-white">Saidul Islam</h4>
+                                    <p class="text-xs text-peach">Founder & Operations Director</p>
+                                </div>
+                            </div>
+
+                            <a href="https://www.facebook.com/profile.php?id=61584064917621" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-cream/90 hover:text-orange-primary bg-espresso-light px-4 py-2.5 rounded-full border border-cream/10 transition-colors">
+                                <i class="fa-brands fa-facebook text-orange-primary text-sm"></i>
+                                <span>Follow Us On Facebook</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-70"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Right Card (Light Cream Quick Quote Container) -->
+                    <div class="lg:col-span-5 bg-sand-light/70 border border-sand-light rounded-3xl p-8 flex flex-col justify-between shadow-soft-card">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div>
+                                    <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary">Instant Booking</span>
+                                    <h3 class="text-2xl font-extrabold text-espresso">Get Your Quick Quote</h3>
+                                </div>
+                                <span class="bg-orange-primary/10 text-orange-primary font-bold text-xs px-3 py-1.5 rounded-full">
+                                    Fast Response
+                                </span>
+                            </div>
+
+                            <form id="hero-quick-form" onsubmit="handleHeroSubmit(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Select Required Service</label>
+                                    <select id="hero-service" required class="w-full bg-cream border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso font-semibold focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                                        <option value="Gutter Cleaning">Gutter Cleaning & Downpipe Flush</option>
+                                        <option value="Window Cleaning">Window, Flyscreen & Shutter Cleaning</option>
+                                        <option value="General House Cleaning">General House Cleaning (20% OFF)</option>
+                                        <option value="End of Lease Cleaning">End of Lease / Move-In Clean</option>
+                                        <option value="Carpet Steam Cleaning">Carpet Steam Cleaning</option>
+                                        <option value="Solar Panel Cleaning">Solar Panel Cleaning</option>
+                                        <option value="Roof Pressure Wash">Roof Pressure Wash & Re-Painting</option>
+                                        <option value="Driveway Pressure Wash">Driveway Pressure Washing</option>
+                                        <option value="Gardening Services">Gardening & Yard Maintenance</option>
+                                    </select>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">State / Region</label>
+                                        <select id="hero-state" required class="w-full bg-cream border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso font-semibold focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                                            <option value="VIC (Melbourne)">VIC (Melbourne)</option>
+                                            <option value="NSW (Sydney)">NSW (Sydney)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Phone Number</label>
+                                        <input type="tel" id="hero-phone" placeholder="0400 000 000" required class="w-full bg-cream border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Property Suburb / Notes</label>
+                                    <textarea id="hero-notes" rows="3" placeholder="Tell us your suburb or property size (e.g. 2 Storey House in Werribee)..." class="w-full bg-cream border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:ring-2 focus:ring-orange-primary resize-none"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-orange-primary hover:bg-orange-hover text-white font-extrabold text-sm py-4 rounded-xl shadow-orange-glow transition-all flex items-center justify-center gap-2 group">
+                                    <span>SEND MESSAGE & BOOK CONSULTATION</span>
+                                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 9 Core Services Grid Section -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary bg-orange-primary/10 px-4 py-1.5 rounded-full">
+                        Comprehensive Property Solutions
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-espresso">
+                        Our 9 Core Cleaning & Maintenance Services
+                    </h2>
+                    <p class="text-charcoal/70 text-base">
+                        Engineered to enhance property value, ensure safety compliance, and maintain spotless aesthetics.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Service 1: Gutter Cleaning -->
+                    <div class="bg-cream border border-sand-light rounded-2xl p-6 shadow-soft-card hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-espresso text-orange-primary flex items-center justify-center text-2xl group-hover:bg-orange-primary group-hover:text-cream transition-colors">
+                                <i class="fa-solid fa-cloud-rain"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-espresso">Gutter Cleaning & Flush</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                Complete removal of leaves, sludge, and debris using high-vacuum technology followed by full downpipe water flushing.
+                            </p>
+                            <ul class="text-xs space-y-2 font-medium text-charcoal/80">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Downpipe blockage clearing</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Before & After roof photos</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-espresso">From <span class="text-orange-primary text-base">$149</span></span>
+                            <button onclick="openQuoteModal('Gutter Cleaning')" class="text-xs font-extrabold text-orange-primary hover:text-orange-hover flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Book This <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Window Cleaning -->
+                    <div class="bg-cream border border-sand-light rounded-2xl p-6 shadow-soft-card hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-espresso text-orange-primary flex items-center justify-center text-2xl group-hover:bg-orange-primary group-hover:text-cream transition-colors">
+                                <i class="fa-solid fa-border-all"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-espresso">Window, Flyscreen & Shutters</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                Crystal-clear streak-free window cleaning for multi-storey homes and commercial storefronts, including tracks and screens.
+                            </p>
+                            <ul class="text-xs space-y-2 font-medium text-charcoal/80">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Pure water pole system</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Flyscreen wash & frame wipe</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-espresso">From <span class="text-orange-primary text-base">$120</span></span>
+                            <button onclick="openQuoteModal('Window Cleaning')" class="text-xs font-extrabold text-orange-primary hover:text-orange-hover flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Book This <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: General House Cleaning (With 20% OFF tag) -->
+                    <div class="bg-cream border-2 border-orange-primary/40 rounded-2xl p-6 shadow-soft-card hover:shadow-xl transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                        <div class="absolute top-4 right-4 bg-orange-primary text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                            20% OFF Promo
+                        </div>
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-espresso text-orange-primary flex items-center justify-center text-2xl group-hover:bg-orange-primary group-hover:text-cream transition-colors">
+                                <i class="fa-solid fa-sparkles"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-espresso">General House Cleaning</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                Detailed recurring or one-off home sanitization covering kitchens, bathrooms, dusting, vacuuming, and surface polishing.
+                            </p>
+                            <ul class="text-xs space-y-2 font-medium text-charcoal/80">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Eco-friendly cleaning products</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Flexible weekly or fortnightly</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-espresso">From <span class="text-orange-primary text-base">$99</span></span>
+                            <button onclick="openQuoteModal('General House Cleaning')" class="text-xs font-extrabold text-orange-primary hover:text-orange-hover flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Book This <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: End of Lease Cleaning -->
+                    <div class="bg-cream border border-sand-light rounded-2xl p-6 shadow-soft-card hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-espresso text-orange-primary flex items-center justify-center text-2xl group-hover:bg-orange-primary group-hover:text-cream transition-colors">
+                                <i class="fa-solid fa-key"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-espresso">End of Lease / Move Clean</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                100% Bond-Back guaranteed deep clean designed to satisfy strict real estate agent exit inspection checklists.
+                            </p>
+                            <ul class="text-xs space-y-2 font-medium text-charcoal/80">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Deep oven & rangehood degreasing</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Real estate re-clean guarantee</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-espresso">From <span class="text-orange-primary text-base">$249</span></span>
+                            <button onclick="openQuoteModal('End of Lease Cleaning')" class="text-xs font-extrabold text-orange-primary hover:text-orange-hover flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Book This <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service 5: Carpet Steam Cleaning -->
+                    <div class="bg-cream border border-sand-light rounded-2xl p-6 shadow-soft-card hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-espresso text-orange-primary flex items-center justify-center text-2xl group-hover:bg-orange-primary group-hover:text-cream transition-colors">
+                                <i class="fa-solid fa-rug"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-espresso">Carpet Steam Cleaning</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                Commercial-grade hot water extraction stem cleaning to eliminate deep-seated dirt, allergens, and stubborn pet stains.
+                            </p>
+                            <ul class="text-xs space-y-2 font-medium text-charcoal/80">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Fast dry time technology</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Anti-bacterial & deodorizing</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-espresso">From <span class="text-orange-primary text-base">$89</span></span>
+                            <button onclick="openQuoteModal('Carpet Steam Cleaning')" class="text-xs font-extrabold text-orange-primary hover:text-orange-hover flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Book This <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service 6: Solar Panel Cleaning -->
+                    <div class="bg-cream border border-sand-light rounded-2xl p-6 shadow-soft-card hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-espresso text-orange-primary flex items-center justify-center text-2xl group-hover:bg-orange-primary group-hover:text-cream transition-colors">
+                                <i class="fa-solid fa-solar-panel"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-espresso">Solar Panel Efficiency Clean</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                Deionized pure water washing to remove dust film, bird droppings, and grime, restoring solar output up to 30%.
+                            </p>
+                            <ul class="text-xs space-y-2 font-medium text-charcoal/80">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Non-scratch soft brush technique</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> No detergent chemical residue</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-espresso">From <span class="text-orange-primary text-base">$110</span></span>
+                            <button onclick="openQuoteModal('Solar Panel Cleaning')" class="text-xs font-extrabold text-orange-primary hover:text-orange-hover flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Book This <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service 7: Roof Pressure Wash & Re-Painting -->
+                    <div class="bg-cream border border-sand-light rounded-2xl p-6 shadow-soft-card hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-espresso text-orange-primary flex items-center justify-center text-2xl group-hover:bg-orange-primary group-hover:text-cream transition-colors">
+                                <i class="fa-solid fa-trowel-bricks"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-espresso">Roof Pressure Wash & Paint</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                High-pressure tile moss/lichen wash, repointing, tile replacement, and multi-coat heat-reflective membrane painting.
+                            </p>
+                            <ul class="text-xs space-y-2 font-medium text-charcoal/80">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> 4000 PSI commercial wash</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> 10-Year paint durability warranty</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-espresso">From <span class="text-orange-primary text-base">$499</span></span>
+                            <button onclick="openQuoteModal('Roof Pressure Wash')" class="text-xs font-extrabold text-orange-primary hover:text-orange-hover flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Book This <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service 8: Driveway Pressure Wash -->
+                    <div class="bg-cream border border-sand-light rounded-2xl p-6 shadow-soft-card hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-espresso text-orange-primary flex items-center justify-center text-2xl group-hover:bg-orange-primary group-hover:text-cream transition-colors">
+                                <i class="fa-solid fa-spray-can"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-espresso">Driveway Pressure Wash</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                Industrial surface rotary washing for concrete, pavers, and stone driveways to blast away oil stains, moss, and dirt.
+                            </p>
+                            <ul class="text-xs space-y-2 font-medium text-charcoal/80">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Oil stain treatment</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Optional protective sealing</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-espresso">From <span class="text-orange-primary text-base">$139</span></span>
+                            <button onclick="openQuoteModal('Driveway Pressure Wash')" class="text-xs font-extrabold text-orange-primary hover:text-orange-hover flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Book This <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service 9: Gardening Services -->
+                    <div class="bg-cream border border-sand-light rounded-2xl p-6 shadow-soft-card hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-espresso text-orange-primary flex items-center justify-center text-2xl group-hover:bg-orange-primary group-hover:text-cream transition-colors">
+                                <i class="fa-solid fa-tree"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-espresso">Gardening & Lawn Care</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                Lawn mowing, hedge trimming, weed spraying, green waste removal, and general suburban garden cleanup.
+                            </p>
+                            <ul class="text-xs space-y-2 font-medium text-charcoal/80">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Precision edging & hedge shaping</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Green waste disposal included</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-espresso">From <span class="text-orange-primary text-base">$85</span></span>
+                            <button onclick="openQuoteModal('Gardening Services')" class="text-xs font-extrabold text-orange-primary hover:text-orange-hover flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Book This <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Verified Review Spotlight Container -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+                <div class="bg-espresso text-cream rounded-3xl p-8 sm:p-10 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="space-y-4 max-w-2xl">
+                        <div class="flex items-center gap-1 text-orange-primary text-lg">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span class="text-xs font-bold text-peach ml-2">5.0 Star Verified Review</span>
+                        </div>
+                        <p class="text-xl sm:text-2xl font-bold italic leading-snug text-white">
+                            "Sinpro cleaned our solar panels and cleared two storeys of leaf-blocked gutters in Werribee. Fast, polite, and didn't leave a single speck of dirt behind."
+                        </p>
+                        <div class="flex items-center gap-3 pt-2">
+                            <div class="w-10 h-10 rounded-full bg-orange-primary text-white flex items-center justify-center font-bold text-sm">
+                                JM
+                            </div>
+                            <div>
+                                <h5 class="text-sm font-bold text-white">Jason M.</h5>
+                                <p class="text-xs text-cream/70">Homeowner in Werribee, VIC • Service: Gutter & Solar Clean</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-auto flex-shrink-0">
+                        <button onclick="openQuoteModal('Gutter Cleaning')" class="w-full md:w-auto bg-orange-primary hover:bg-orange-hover text-white text-sm font-extrabold px-8 py-4 rounded-xl shadow-orange-glow transition-all">
+                            Book Similar Service Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- PAGE 2: SERVICES HUB VIEW (#services)      -->
+        <!-- ========================================== -->
+        <section id="view-services" class="page-view hidden space-y-12 py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary bg-orange-primary/10 px-4 py-1.5 rounded-full">
+                        Full Service Catalog
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-espresso">
+                        Residential & Commercial Maintenance Hub
+                    </h2>
+                    <p class="text-charcoal/70 text-base">
+                        Select your service category to view detailed scope of work and instant price calculators.
+                    </p>
+
+                    <!-- Filter Switch Buttons -->
+                    <div class="flex flex-wrap justify-center gap-2 pt-4">
+                        <button onclick="filterServices('all')" id="filter-btn-all" class="service-filter-btn active bg-espresso text-cream text-xs font-bold px-5 py-2.5 rounded-full transition-colors">
+                            All Services (9)
+                        </button>
+                        <button onclick="filterServices('residential')" id="filter-btn-residential" class="service-filter-btn bg-sand-light text-espresso hover:bg-espresso hover:text-cream text-xs font-bold px-5 py-2.5 rounded-full transition-colors">
+                            Residential Care
+                        </button>
+                        <button onclick="filterServices('commercial')" id="filter-btn-commercial" class="service-filter-btn bg-sand-light text-espresso hover:bg-espresso hover:text-cream text-xs font-bold px-5 py-2.5 rounded-full transition-colors">
+                            Commercial & Office
+                        </button>
+                        <button onclick="filterServices('exterior')" id="filter-btn-exterior" class="service-filter-btn bg-sand-light text-espresso hover:bg-espresso hover:text-cream text-xs font-bold px-5 py-2.5 rounded-full transition-colors">
+                            Roof & Exterior Wash
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Detailed Services Cards Stack -->
+                <div class="space-y-8" id="services-hub-list">
+                    
+                    <!-- Expanded Card 1: Gutter Cleaning -->
+                    <div class="service-card-item exterior residential bg-cream border border-sand-light rounded-3xl p-6 sm:p-8 shadow-soft-card grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                        <div class="lg:col-span-8 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span class="bg-orange-primary/10 text-orange-primary text-xs font-extrabold px-3 py-1 rounded-full uppercase">Exterior Care</span>
+                                <span class="text-xs font-bold text-charcoal/60">Includes 2-Storey Access</span>
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-espresso">Gutter Vacuum Cleaning & Downpipe Wash</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                Clogged gutters cause severe rainwater overflow and costly roof timber rot. Our team utilizes high-lift industrial wet/dry vacuum machines to extract dirt, moss, pine needles, and stagnant water without scratching your gutters.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-medium pt-2">
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-primary"></i> Full downpipe flush & test</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-primary"></i> Gutter guard clearance</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-primary"></i> Safety harness certified staff</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-primary"></i> Digital before & after photos</div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 bg-sand-light/60 p-6 rounded-2xl flex flex-col justify-between items-center text-center space-y-4">
+                            <div>
+                                <span class="text-xs text-charcoal/70 uppercase font-bold">Standard Single Storey</span>
+                                <div class="text-3xl font-extrabold text-espresso my-1">$149 <span class="text-xs text-charcoal/60 font-normal">inc. GST</span></div>
+                                <span class="text-[11px] text-orange-primary font-semibold">Free On-site Inspection</span>
+                            </div>
+                            <button onclick="openQuoteModal('Gutter Cleaning')" class="w-full bg-orange-primary hover:bg-orange-hover text-white text-xs font-extrabold py-3.5 rounded-xl shadow-orange-glow transition-all">
+                                INSTANT BOOKING & QUOTE
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Expanded Card 2: Window Cleaning -->
+                    <div class="service-card-item residential commercial bg-cream border border-sand-light rounded-3xl p-6 sm:p-8 shadow-soft-card grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                        <div class="lg:col-span-8 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span class="bg-orange-primary/10 text-orange-primary text-xs font-extrabold px-3 py-1 rounded-full uppercase">Glass & Window</span>
+                                <span class="text-xs font-bold text-charcoal/60">Residential & Commercial</span>
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-espresso">Pure Water Window & Shutter Detailing</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                We utilize multi-stage deionized water filtration poles to wash exterior glass without leaving water spots or soap film. Interior glass is squeegee-cleaned by hand with protective drop sheets.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-medium pt-2">
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-primary"></i> Window frame & track vacuuming</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-primary"></i> Flyscreen remove & wet wash</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-primary"></i> High-reach pole up to 4 storeys</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-primary"></i> External shutter pressure wipe</div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 bg-sand-light/60 p-6 rounded-2xl flex flex-col justify-between items-center text-center space-y-4">
+                            <div>
+                                <span class="text-xs text-charcoal/70 uppercase font-bold">Average 3-Bed House</span>
+                                <div class="text-3xl font-extrabold text-espresso my-1">$180 <span class="text-xs text-charcoal/60 font-normal">inc. GST</span></div>
+                                <span class="text-[11px] text-orange-primary font-semibold">Includes Tracks & Screens</span>
+                            </div>
+                            <button onclick="openQuoteModal('Window Cleaning')" class="w-full bg-orange-primary hover:bg-orange-hover text-white text-xs font-extrabold py-3.5 rounded-xl shadow-orange-glow transition-all">
+                                INSTANT BOOKING & QUOTE
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Expanded Card 3: Roof Restoration -->
+                    <div class="service-card-item exterior bg-cream border border-sand-light rounded-3xl p-6 sm:p-8 shadow-soft-card grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                        <div class="lg:col-span-8 space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span class="bg-orange-primary/10 text-orange-primary text-xs font-extrabold px-3 py-1 rounded-full uppercase">Roof Restoration</span>
+                                <span class="text-xs font-bold text-charcoal/60">Tile & Colorbond</span>
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-espresso">Roof High-Pressure Wash & Paint Protection</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                Complete roof transformation. We remove heavy lichen, moss, and dirt using 4000 PSI rototip washers, replace cracked cement bedding, and apply heat-reflective protective primer and roof paint membrane.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-medium pt-2">
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-primary"></i> Moss & algae chemical treatment</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-primary"></i> Ridge capping re-pointing</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-primary"></i> Premium Dulux/Nutech membrane</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-orange-primary"></i> 10-Year written warranty</div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 bg-sand-light/60 p-6 rounded-2xl flex flex-col justify-between items-center text-center space-y-4">
+                            <div>
+                                <span class="text-xs text-charcoal/70 uppercase font-bold">Full Wash Package</span>
+                                <div class="text-3xl font-extrabold text-espresso my-1">$499 <span class="text-xs text-charcoal/60 font-normal">Starting</span></div>
+                                <span class="text-[11px] text-orange-primary font-semibold">Free On-Roof Assessment</span>
+                            </div>
+                            <button onclick="openQuoteModal('Roof Pressure Wash')" class="w-full bg-orange-primary hover:bg-orange-hover text-white text-xs font-extrabold py-3.5 rounded-xl shadow-orange-glow transition-all">
+                                INSTANT BOOKING & QUOTE
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- PAGE 3: LOCATIONS DIRECTORY (#locations)   -->
+        <!-- ========================================== -->
+        <section id="view-locations" class="page-view hidden space-y-12 py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary bg-orange-primary/10 px-4 py-1.5 rounded-full">
+                        Local Presence
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-espresso">
+                        7 Operational Hubs Across NSW & VIC
+                    </h2>
+                    <p class="text-charcoal/70 text-base">
+                        Our mobile maintenance vans service all surrounding suburbs within a 50km radius of each hub.
+                    </p>
+                </div>
+
+                <!-- Dual State Location Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <!-- Melbourne Operations Box (3 Offices) -->
+                    <div class="bg-cream border-2 border-sand-light rounded-3xl p-8 shadow-soft-card flex flex-col justify-between space-y-6">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-sand-light pb-4 mb-6">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-orange-primary text-white flex items-center justify-center font-bold text-lg">
+                                        VIC
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-extrabold text-espresso">Melbourne Operations</h3>
+                                        <p class="text-xs text-charcoal/70">3 Regional Maintenance Hubs</p>
+                                    </div>
+                                </div>
+                                <span class="bg-espresso text-cream text-[10px] font-bold px-3 py-1 rounded-full uppercase">Victoria</span>
+                            </div>
+
+                            <div class="space-y-6">
+                                <!-- Office 1 -->
+                                <div class="p-4 rounded-2xl bg-sand-light/60 flex items-start gap-4">
+                                    <div class="w-8 h-8 rounded-lg bg-espresso text-orange-primary flex items-center justify-center font-bold text-sm shrink-0">1</div>
+                                    <div class="space-y-1">
+                                        <h4 class="font-bold text-espresso text-base">Coburg North Hub</h4>
+                                        <p class="text-xs text-charcoal/80 font-medium"><i class="fa-solid fa-location-dot text-orange-primary mr-1"></i> Lorensen Ave, Coburg North VIC 3058</p>
+                                        <p class="text-[11px] text-charcoal/60">Services North Melbourne, Preston, Brunswick, Campbellfield</p>
+                                    </div>
+                                </div>
+
+                                <!-- Office 2 -->
+                                <div class="p-4 rounded-2xl bg-sand-light/60 flex items-start gap-4">
+                                    <div class="w-8 h-8 rounded-lg bg-espresso text-orange-primary flex items-center justify-center font-bold text-sm shrink-0">2</div>
+                                    <div class="space-y-1">
+                                        <h4 class="font-bold text-espresso text-base">Werribee Hub</h4>
+                                        <p class="text-xs text-charcoal/80 font-medium"><i class="fa-solid fa-location-dot text-orange-primary mr-1"></i> Niagara Way, Werribee VIC 3030</p>
+                                        <p class="text-[11px] text-charcoal/60">Services Point Cook, Hoppers Crossing, Tarneit, Wyndham Vale</p>
+                                    </div>
+                                </div>
+
+                                <!-- Office 3 -->
+                                <div class="p-4 rounded-2xl bg-sand-light/60 flex items-start gap-4">
+                                    <div class="w-8 h-8 rounded-lg bg-espresso text-orange-primary flex items-center justify-center font-bold text-sm shrink-0">3</div>
+                                    <div class="space-y-1">
+                                        <h4 class="font-bold text-espresso text-base">Dandenong Hub</h4>
+                                        <p class="text-xs text-charcoal/80 font-medium"><i class="fa-solid fa-location-dot text-orange-primary mr-1"></i> Norman Ct, Dandenong VIC 3175</p>
+                                        <p class="text-[11px] text-charcoal/60">Services Keysborough, Berwick, Springvale, Frankston</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-espresso"><i class="fa-solid fa-van-shuttle text-orange-primary mr-1"></i> Dispatch Time: &lt; 24 Hrs</span>
+                            <a href="tel:0480858790" class="text-xs font-extrabold text-orange-primary hover:underline">Call Melbourne Team →</a>
+                        </div>
+                    </div>
+
+                    <!-- Sydney Operations Box (4 Offices) -->
+                    <div class="bg-cream border-2 border-sand-light rounded-3xl p-8 shadow-soft-card flex flex-col justify-between space-y-6">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-sand-light pb-4 mb-6">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-orange-primary text-white flex items-center justify-center font-bold text-lg">
+                                        NSW
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-extrabold text-espresso">Sydney Operations</h3>
+                                        <p class="text-xs text-charcoal/70">4 Regional Maintenance Hubs</p>
+                                    </div>
+                                </div>
+                                <span class="bg-espresso text-cream text-[10px] font-bold px-3 py-1 rounded-full uppercase">New South Wales</span>
+                            </div>
+
+                            <div class="space-y-4">
+                                <!-- Office 1 -->
+                                <div class="p-3.5 rounded-2xl bg-sand-light/60 flex items-start gap-3">
+                                    <div class="w-7 h-7 rounded-lg bg-espresso text-orange-primary flex items-center justify-center font-bold text-xs shrink-0">1</div>
+                                    <div class="space-y-0.5">
+                                        <h4 class="font-bold text-espresso text-sm">St Marys Hub</h4>
+                                        <p class="text-xs text-charcoal/80 font-medium"><i class="fa-solid fa-location-dot text-orange-primary mr-1"></i> Sainsbury St, St Marys NSW 2760</p>
+                                    </div>
+                                </div>
+
+                                <!-- Office 2 -->
+                                <div class="p-3.5 rounded-2xl bg-sand-light/60 flex items-start gap-3">
+                                    <div class="w-7 h-7 rounded-lg bg-espresso text-orange-primary flex items-center justify-center font-bold text-xs shrink-0">2</div>
+                                    <div class="space-y-0.5">
+                                        <h4 class="font-bold text-espresso text-sm">Rockdale Hub</h4>
+                                        <p class="text-xs text-charcoal/80 font-medium"><i class="fa-solid fa-location-dot text-orange-primary mr-1"></i> George St, Rockdale NSW 2216</p>
+                                    </div>
+                                </div>
+
+                                <!-- Office 3 -->
+                                <div class="p-3.5 rounded-2xl bg-sand-light/60 flex items-start gap-3">
+                                    <div class="w-7 h-7 rounded-lg bg-espresso text-orange-primary flex items-center justify-center font-bold text-xs shrink-0">3</div>
+                                    <div class="space-y-0.5">
+                                        <h4 class="font-bold text-espresso text-sm">Campbelltown Hub</h4>
+                                        <p class="text-xs text-charcoal/80 font-medium"><i class="fa-solid fa-location-dot text-orange-primary mr-1"></i> Queen St, Campbelltown NSW 2560</p>
+                                    </div>
+                                </div>
+
+                                <!-- Office 4 -->
+                                <div class="p-3.5 rounded-2xl bg-sand-light/60 flex items-start gap-3">
+                                    <div class="w-7 h-7 rounded-lg bg-espresso text-orange-primary flex items-center justify-center font-bold text-xs shrink-0">4</div>
+                                    <div class="space-y-0.5">
+                                        <h4 class="font-bold text-espresso text-sm">Newcastle Hub</h4>
+                                        <p class="text-xs text-charcoal/80 font-medium"><i class="fa-solid fa-location-dot text-orange-primary mr-1"></i> Thorn St, Newcastle NSW 2300</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-espresso"><i class="fa-solid fa-van-shuttle text-orange-primary mr-1"></i> Dispatch Time: &lt; 24 Hrs</span>
+                            <a href="tel:0480858790" class="text-xs font-extrabold text-orange-primary hover:underline">Call Sydney Team →</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Interactive Suburb Checker Search -->
+                <div class="bg-espresso text-cream rounded-3xl p-8 text-center space-y-4">
+                    <h3 class="text-xl font-bold">Wondering if we service your suburb?</h3>
+                    <p class="text-xs text-cream/70 max-w-xl mx-auto">Enter your postcode or suburb name below to verify instant technician dispatch.</p>
+                    <div class="max-w-md mx-auto flex gap-2">
+                        <input type="text" id="suburb-search-input" placeholder="e.g. Werribee, Rockdale, Campbelltown..." class="flex-grow bg-cream text-espresso px-4 py-3 rounded-xl text-sm font-semibold focus:outline-none">
+                        <button onclick="checkSuburbAvailability()" class="bg-orange-primary hover:bg-orange-hover text-white text-xs font-bold px-6 py-3 rounded-xl transition-colors">
+                            Check Suburb
+                        </button>
+                    </div>
+                    <div id="suburb-result-box" class="hidden text-xs font-bold p-3 rounded-xl max-w-md mx-auto"></div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- PAGE 4: GALLERY & REVIEWS (#gallery)       -->
+        <!-- ========================================== -->
+        <section id="view-gallery" class="page-view hidden space-y-12 py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary bg-orange-primary/10 px-4 py-1.5 rounded-full">
+                        Proof of Work
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-espresso">
+                        Before & After Transformations
+                    </h2>
+                    <p class="text-charcoal/70 text-base">
+                        Drag the slider handle left and right to see real project outcomes completed by Sinpro technicians.
+                    </p>
+                </div>
+
+                <!-- Interactive Before / After Slider Component -->
+                <div class="max-w-4xl mx-auto bg-cream border border-sand-light p-4 rounded-3xl shadow-xl">
+                    <div class="ba-slider h-80 sm:h-96 w-full" id="gutter-ba-slider">
+                        <!-- AFTER IMAGE (Underneath) -->
+                        <div class="relative w-full h-full bg-espresso flex items-center justify-center overflow-hidden">
+                            <!-- Clean Gutter Graphic Representation -->
+                            <div class="absolute inset-0 bg-gradient-to-r from-emerald-900 to-teal-900 flex flex-col items-center justify-center text-white p-6 text-center">
+                                <span class="bg-emerald-500/30 text-emerald-300 border border-emerald-400/40 text-xs font-black uppercase px-4 py-1.5 rounded-full mb-3">AFTER SINPRO CLEAN</span>
+                                <h4 class="text-2xl font-extrabold text-white">100% Clear & Vacuumed Gutter Channel</h4>
+                                <p class="text-xs text-emerald-100/80 max-w-md mt-2">Free flowing water clearance, spotless roof edge, and flush downpipe testing verified.</p>
+                            </div>
+                        </div>
+
+                        <!-- BEFORE IMAGE (Top Resizable Layer) -->
+                        <div class="resize" id="ba-resize-layer">
+                            <div class="w-full h-full bg-amber-950 flex flex-col items-center justify-center text-white p-6 text-center">
+                                <span class="bg-red-500/30 text-red-300 border border-red-400/40 text-xs font-black uppercase px-4 py-1.5 rounded-full mb-3">BEFORE CLEANING</span>
+                                <h4 class="text-2xl font-extrabold text-white">Blocked Gutter Overflowing With Debris</h4>
+                                <p class="text-xs text-amber-100/80 max-w-md mt-2">Dense leaf buildup, stagnant mud sludge, causing water leakage risk.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slider Handle -->
+                        <div class="handle" id="ba-handle"></div>
+                    </div>
+                </div>
+
+                <!-- Customer Reviews Cards Grid -->
+                <div class="pt-8 space-y-6">
+                    <h3 class="text-2xl font-extrabold text-espresso text-center">What Our Clients Say Across Australia</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Review Card 1 -->
+                        <div class="bg-cream border border-sand-light p-6 rounded-2xl shadow-soft-card space-y-4">
+                            <div class="flex items-center gap-1 text-orange-primary text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-xs text-charcoal/80 leading-relaxed italic">
+                                "The team came out to our Rockdale office for end-of-lease carpet steam cleaning and window washing. Real estate agent signed off without a single issue!"
+                            </p>
+                            <div class="flex items-center justify-between pt-2 border-t border-sand-light text-xs font-bold">
+                                <span>Michael R. (Rockdale, NSW)</span>
+                                <span class="text-orange-primary">Verified Buyer</span>
+                            </div>
+                        </div>
+
+                        <!-- Review Card 2 -->
+                        <div class="bg-cream border border-sand-light p-6 rounded-2xl shadow-soft-card space-y-4">
+                            <div class="flex items-center gap-1 text-orange-primary text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-xs text-charcoal/80 leading-relaxed italic">
+                                "Our 2-storey roof in Coburg North was full of dark moss. Sinpro pressure washed it and cleared the gutters in one afternoon. Brilliant service."
+                            </p>
+                            <div class="flex items-center justify-between pt-2 border-t border-sand-light text-xs font-bold">
+                                <span>Amanda K. (Coburg North, VIC)</span>
+                                <span class="text-orange-primary">Verified Buyer</span>
+                            </div>
+                        </div>
+
+                        <!-- Review Card 3 -->
+                        <div class="bg-cream border border-sand-light p-6 rounded-2xl shadow-soft-card space-y-4">
+                            <div class="flex items-center gap-1 text-orange-primary text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-xs text-charcoal/80 leading-relaxed italic">
+                                "Extremely quick quote process over phone. Technician arrived at Campbelltown right on time. Driveway looks brand new again."
+                            </p>
+                            <div class="flex items-center justify-between pt-2 border-t border-sand-light text-xs font-bold">
+                                <span>David T. (Campbelltown, NSW)</span>
+                                <span class="text-orange-primary">Verified Buyer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- PAGE 5: CONTACT US (#contact)              -->
+        <!-- ========================================== -->
+        <section id="view-contact" class="page-view hidden space-y-12 py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Left Column: Official Contact Info Container -->
+                    <div class="lg:col-span-5 bg-espresso text-cream p-8 sm:p-10 rounded-3xl shadow-xl space-y-8">
+                        <div>
+                            <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary">Get In Touch</span>
+                            <h2 class="text-3xl font-extrabold text-white mt-1">We're Ready To Clean Your Property</h2>
+                            <p class="text-xs text-cream/70 mt-2">Have a question or need emergency gutter clearance? Reach out directly to our central booking team.</p>
+                        </div>
+
+                        <div class="space-y-6 text-sm">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-orange-primary text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-phone text-lg"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-peach uppercase font-bold block">Phone Call / WhatsApp</span>
+                                    <a href="tel:0480858790" class="text-lg font-extrabold text-white hover:text-orange-primary transition-colors">0480 858 790</a>
+                                    <p class="text-[11px] text-cream/60">Mon - Sat: 7:00 AM - 6:00 PM</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-orange-primary text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-envelope text-lg"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-peach uppercase font-bold block">Email Booking Enquiries</span>
+                                    <a href="mailto:sinprocleaningsolutions@gmail.com" class="text-sm font-bold text-white hover:text-orange-primary transition-colors">sinprocleaningsolutions@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-orange-primary text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-brands fa-facebook-f text-lg"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-peach uppercase font-bold block">Facebook Social Page</span>
+                                    <a href="https://www.facebook.com/profile.php?id=61584064917621" target="_blank" class="text-sm font-bold text-white hover:text-orange-primary transition-colors underline">
+                                        Sinpro Cleaning Solutions Profile
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Operational Hours Card -->
+                        <div class="p-4 rounded-2xl bg-espresso-light border border-cream/10 space-y-2">
+                            <h4 class="text-xs font-bold uppercase text-peach">Dispatch Operating Hours</h4>
+                            <div class="text-xs text-cream/80 space-y-1">
+                                <div class="flex justify-between"><span>Monday - Friday:</span> <span class="font-bold text-white">7:00am - 6:00pm</span></div>
+                                <div class="flex justify-between"><span>Saturday:</span> <span class="font-bold text-white">8:00am - 4:00pm</span></div>
+                                <div class="flex justify-between"><span>Sunday:</span> <span class="font-bold text-peach">On-Call Emergency</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Form matching screenshot aesthetic -->
+                    <div class="lg:col-span-7 bg-cream border border-sand-light p-8 sm:p-10 rounded-3xl shadow-soft-card space-y-6">
+                        <div>
+                            <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary">Direct Consultation</span>
+                            <h3 class="text-2xl font-extrabold text-espresso">Send Message & Book Consultation</h3>
+                        </div>
+
+                        <form id="contact-main-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Your Full Name</label>
+                                    <input type="text" required placeholder="John Smith" class="w-full bg-sand-light/50 border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Phone Number</label>
+                                    <input type="tel" required placeholder="0400 000 000" class="w-full bg-sand-light/50 border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Service Required</label>
+                                    <select class="w-full bg-sand-light/50 border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso font-semibold focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                                        <option>Gutter Cleaning</option>
+                                        <option>Window & Shutter Cleaning</option>
+                                        <option>General House Cleaning</option>
+                                        <option>End of Lease Clean</option>
+                                        <option>Carpet Steam Clean</option>
+                                        <option>Solar Panel Clean</option>
+                                        <option>Roof Wash & Paint</option>
+                                        <option>Driveway Pressure Wash</option>
+                                        <option>Gardening Services</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Preferred Budget Range</label>
+                                    <select class="w-full bg-sand-light/50 border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso font-semibold focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                                        <option>Under $200</option>
+                                        <option>$200 - $500</option>
+                                        <option>$500 - $1,000</option>
+                                        <option>$1,000+</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Project Details / Property Address</label>
+                                <textarea rows="4" required placeholder="Tell us about your project, challenge, property storey height, or goals..." class="w-full bg-sand-light/50 border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:ring-2 focus:ring-orange-primary resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-orange-primary hover:bg-orange-hover text-white font-extrabold text-sm py-4 rounded-xl shadow-orange-glow transition-all flex items-center justify-center gap-2">
+                                <span>SEND MESSAGE & BOOK CONSULTATION</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- DYNAMIC FREE QUOTE MODAL                   -->
+    <!-- ========================================== -->
+    <div id="quote-modal" class="fixed inset-0 z-50 hidden bg-espresso/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-cream border border-sand-light max-w-xl w-full rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto space-y-6">
+            
+            <button onclick="closeQuoteModal()" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-sand-light text-espresso hover:text-orange-primary flex items-center justify-center font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary">Instant Price Estimator</span>
+                <h3 class="text-2xl font-extrabold text-espresso">Calculate & Book Your Service</h3>
+            </div>
+
+            <form id="modal-quote-form" onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Service Type</label>
+                    <select id="modal-service-select" onchange="calculateEstimatedPrice()" class="w-full bg-sand-light border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso font-semibold focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                        <option value="Gutter Cleaning">Gutter Cleaning ($149 Base)</option>
+                        <option value="Window Cleaning">Window & Screen Cleaning ($120 Base)</option>
+                        <option value="General House Cleaning">General House Cleaning ($99 Base)</option>
+                        <option value="End of Lease Cleaning">End of Lease Deep Clean ($249 Base)</option>
+                        <option value="Carpet Steam Cleaning">Carpet Steam Cleaning ($89 Base)</option>
+                        <option value="Solar Panel Cleaning">Solar Panel Cleaning ($110 Base)</option>
+                        <option value="Roof Pressure Wash">Roof Pressure Wash & Paint ($499 Base)</option>
+                        <option value="Driveway Pressure Wash">Driveway Wash ($139 Base)</option>
+                        <option value="Gardening Services">Gardening Care ($85 Base)</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Property Storey Height</label>
+                        <select id="modal-height-select" onchange="calculateEstimatedPrice()" class="w-full bg-sand-light border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso font-semibold focus:outline-none">
+                            <option value="1">1 Storey Single Level</option>
+                            <option value="1.5">2 Storey Double Level (+50%)</option>
+                            <option value="2">3+ Storey Commercial (+100%)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">State Location</label>
+                        <select id="modal-state-select" class="w-full bg-sand-light border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso font-semibold focus:outline-none">
+                            <option>Victoria (Melbourne Hubs)</option>
+                            <option>New South Wales (Sydney Hubs)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Estimated Price Box -->
+                <div class="p-4 rounded-2xl bg-espresso text-cream flex items-center justify-between">
+                    <div>
+                        <span class="text-[11px] uppercase font-bold text-peach block">Instant Estimated Price</span>
+                        <span class="text-xs text-cream/70">Final estimate verified on-site</span>
+                    </div>
+                    <div class="text-2xl font-black text-orange-primary" id="modal-price-display">
+                        $149 AUD
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Your Name</label>
+                        <input type="text" required placeholder="Full Name" class="w-full bg-sand-light border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Phone Number</label>
+                        <input type="tel" required placeholder="0480 858 790" class="w-full bg-sand-light border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Suburb / Address</label>
+                    <input type="text" required placeholder="e.g. Werribee VIC or Rockdale NSW" class="w-full bg-sand-light border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none">
+                </div>
+
+                <button type="submit" class="w-full bg-orange-primary hover:bg-orange-hover text-white font-extrabold text-sm py-4 rounded-xl shadow-orange-glow transition-all">
+                    CONFIRM & SUBMIT QUOTE REQUEST
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Toast Box -->
+    <div id="toast-notification" class="fixed bottom-6 right-6 z-50 hidden bg-espresso text-cream px-6 py-4 rounded-2xl shadow-2xl border border-orange-primary flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-orange-primary text-white flex items-center justify-center font-bold">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div>
+            <h5 class="text-sm font-bold text-white" id="toast-title">Success</h5>
+            <p class="text-xs text-cream/80" id="toast-message">Your booking enquiry has been received!</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-espresso text-cream border-t border-cream/10 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-orange-primary text-white rounded-lg flex items-center justify-center font-bold">
+                            S
+                        </div>
+                        <span class="text-xl font-extrabold text-white">SINPRO</span>
+                    </div>
+                    <p class="text-xs text-cream/70 leading-relaxed">
+                        Professional property cleaning and building maintenance operating across all major metro suburbs in Sydney & Melbourne.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-extrabold uppercase text-peach mb-3">Quick Navigation</h5>
+                    <ul class="text-xs space-y-2 text-cream/80 font-medium">
+                        <li><a href="#home" class="hover:text-orange-primary">Home</a></li>
+                        <li><a href="#services" class="hover:text-orange-primary">Services Hub</a></li>
+                        <li><a href="#locations" class="hover:text-orange-primary">Our 7 Office Locations</a></li>
+                        <li><a href="#gallery" class="hover:text-orange-primary">Gallery & Reviews</a></li>
+                        <li><a href="#contact" class="hover:text-orange-primary">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-extrabold uppercase text-peach mb-3">Contact Information</h5>
+                    <ul class="text-xs space-y-2 text-cream/80">
+                        <li><i class="fa-solid fa-phone text-orange-primary mr-2"></i> +61 480 858 790</li>
+                        <li><i class="fa-solid fa-envelope text-orange-primary mr-2"></i> sinprocleaningsolutions@gmail.com</li>
+                        <li><i class="fa-brands fa-facebook text-orange-primary mr-2"></i> Sinpro Facebook Page</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-extrabold uppercase text-peach mb-3">State Coverage</h5>
+                    <p class="text-xs text-cream/70 leading-relaxed">
+                        <strong>Melbourne VIC:</strong> Coburg North, Werribee, Dandenong.<br>
+                        <strong>Sydney NSW:</strong> St Marys, Rockdale, Campbelltown, Newcastle.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-cream/10 text-center text-xs text-cream/50 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>© 2026 Sinpro Building Maintenance. All Rights Reserved.</p>
+                <p>Designed with Warm Cream & Espresso Palette.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- JAVASCRIPT SPA ROUTING & INTERACTIVITY     -->
+    <!-- ========================================== -->
+    <script>
+        // --- 1. SPA Hash-based Routing Engine ---
+        function handleRouting() {
+            const hash = window.location.hash || '#home';
+            const views = ['home', 'services', 'locations', 'gallery', 'contact'];
+            
+            views.forEach(view => {
+                const element = document.getElementById(`view-${view}`);
+                const navLink = document.getElementById(`nav-${view}`);
+                
+                if (hash === `#${view}`) {
+                    element.classList.remove('hidden');
+                    if (navLink) navLink.classList.add('active');
+                } else {
+                    element.classList.add('hidden');
+                    if (navLink) navLink.classList.remove('active');
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('hashchange', handleRouting);
+        window.addEventListener('load', handleRouting);
+
+        // --- 2. Mobile Menu Toggle ---
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        // --- 3. Dynamic Quote Modal & Price Calculator ---
+        const basePrices = {
+            'Gutter Cleaning': 149,
+            'Window Cleaning': 120,
+            'General House Cleaning': 99,
+            'End of Lease Cleaning': 249,
+            'Carpet Steam Cleaning': 89,
+            'Solar Panel Cleaning': 110,
+            'Roof Pressure Wash': 499,
+            'Driveway Pressure Wash': 139,
+            'Gardening Services': 85
+        };
+
+        function openQuoteModal(serviceName) {
+            const modal = document.getElementById('quote-modal');
+            const select = document.getElementById('modal-service-select');
+            
+            if (serviceName && basePrices[serviceName]) {
+                select.value = serviceName;
+            }
+            calculateEstimatedPrice();
+            modal.classList.remove('hidden');
+        }
+
+        function closeQuoteModal() {
+            document.getElementById('quote-modal').classList.add('hidden');
+        }
+
+        function calculateEstimatedPrice() {
+            const service = document.getElementById('modal-service-select').value;
+            const multiplier = parseFloat(document.getElementById('modal-height-select').value) || 1;
+            const base = basePrices[service] || 150;
+            const total = Math.round(base * multiplier);
+            
+            document.getElementById('modal-price-display').innerText = `$${total} AUD`;
+        }
+
+        // --- 4. Suburb Search Checker ---
+        const availableSuburbs = [
+            'werribee', 'coburg', 'coburg north', 'dandenong', 'point cook', 'hopper crossing', 
+            'rockdale', 'st marys', 'campbelltown', 'newcastle', 'parramatta', 'penrith', 
+            'preston', 'brunswick', 'keysborough', 'berwick', 'springvale', 'george st'
+        ];
+
+        function checkSuburbAvailability() {
+            const input = document.getElementById('suburb-search-input').value.toLowerCase().trim();
+            const resultBox = document.getElementById('suburb-result-box');
+            resultBox.classList.remove('hidden', 'bg-emerald-500/20', 'text-emerald-300', 'bg-red-500/20', 'text-red-300');
+
+            if (!input) {
+                resultBox.innerText = 'Please enter a suburb name or postcode.';
+                resultBox.classList.add('bg-red-500/20', 'text-red-300');
+                return;
+            }
+
+            const match = availableSuburbs.some(sub => input.includes(sub));
+            if (match || input.length > 3) {
+                resultBox.innerText = `✓ Direct Dispatch Available for "${input.toUpperCase()}". Technicians operating in your area!`;
+                resultBox.classList.add('bg-emerald-500/20', 'text-emerald-300');
+            } else {
+                resultBox.innerText = `Yes, we service "${input.toUpperCase()}" via our mobile regional fleet. Call 0480 858 790 for exact booking.`;
+                resultBox.classList.add('bg-emerald-500/20', 'text-emerald-300');
+            }
+        }
+
+        // --- 5. Filter Services in Hub ---
+        function filterServices(category) {
+            const buttons = document.querySelectorAll('.service-filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active', 'bg-espresso', 'text-cream');
+                btn.classList.add('bg-sand-light', 'text-espresso');
+            });
+            
+            const activeBtn = document.getElementById(`filter-btn-${category}`);
+            if (activeBtn) {
+                activeBtn.classList.add('active', 'bg-espresso', 'text-cream');
+                activeBtn.classList.remove('bg-sand-light', 'text-espresso');
+            }
+
+            const cards = document.querySelectorAll('.service-card-item');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // --- 6. Form Submission Handlers ---
+        function showToast(title, message) {
+            const toast = document.getElementById('toast-notification');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-message').innerText = message;
+            toast.classList.remove('hidden');
+            
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        function handleHeroSubmit(e) {
+            e.preventDefault();
+            showToast('Quote Requested!', 'Our team will call your phone number within 15 minutes.');
+            e.target.reset();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast('Consultation Booked!', 'Thank you! We have received your project details.');
+            e.target.reset();
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            closeQuoteModal();
+            showToast('Booking Submitted!', 'Your price estimate has been logged. We will contact you to confirm time.');
+        }
+
+        // --- 7. Interactive Before/After Drag Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('gutter-ba-slider');
+            const resizeLayer = document.getElementById('ba-resize-layer');
+            const handle = document.getElementById('ba-handle');
+
+            if (!slider || !resizeLayer || !handle) return;
+
+            let isDragging = false;
+
+            const updateSlider = (x) => {
+                const rect = slider.getBoundingClientRect();
+                let position = x - rect.left;
+                if (position < 0) position = 0;
+                if (position > rect.width) position = rect.width;
+                
+                const percentage = (position / rect.width) * 100;
+                resizeLayer.style.width = `${percentage}%`;
+                handle.style.left = `${percentage}%`;
+            };
+
+            handle.addEventListener('mousedown', () => isDragging = true);
+            window.addEventListener('mouseup', () => isDragging = false);
+            window.addEventListener('mousemove', (e) => {
+                if (isDragging) updateSlider(e.clientX);
+            });
+
+            // Touch support for mobile
+            handle.addEventListener('touchstart', () => isDragging = true);
+            window.addEventListener('touchend', () => isDragging = false);
+            window.addEventListener('touchmove', (e) => {
+                if (isDragging && e.touches[0]) updateSlider(e.touches[0].clientX);
+            });
+        });
+    </script>
+</body>
+</html>
