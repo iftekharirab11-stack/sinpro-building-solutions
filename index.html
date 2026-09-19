@@ -1,1232 +1,1220 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sinpro Building Maintenance | Solar, Roofing & Property Care Victoria & NSW</title>
+    <title>Sinpro Building Maintenance | Victoria & NSW Property Care, Solar & Roofing</title>
     
-    <!-- Built-in High-Quality SEO Meta Tags -->
-    <meta name="description" content="Sinpro Building Maintenance provides top-tier solar panel installation, battery storage, heat pumps, roofing restoration, gutter cleaning, and commercial maintenance across Victoria and NSW. Contact Alex Peterson for a free quote.">
-    <meta name="keywords" content="roofing restoration, solar panel installation, battery storage, heat pump installation, gutter cleaning, pressure washing, Sydney, Melbourne, Victoria, NSW, Sinpro Maintenance">
-    <meta name="author" content="Alex Peterson">
-    
-    <!-- Open Graph Social Media SEO -->
-    <meta property="og:title" content="Sinpro Building Maintenance | Solar, Roofing & Property Care">
-    <meta property="og:description" content="Expert property care, roofing restoration, and solar energy solutions covering all of Victoria and NSW. Get a free onsite quotation today.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="logo.png">
-
-    <!-- Schema.org Structured Data for Search Engine Optimization -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "HomeAndConstructionBusiness",
-      "name": "Sinpro Building Maintenance",
-      "image": "logo.png",
-      "email": "alexpeterson876@gmail.com",
-      "telephone": "+61480858790",
-      "founder": {
-        "@type": "Person",
-        "name": "Alex Peterson"
-      },
-      "areaServed": ["Victoria", "New South Wales"],
-      "description": "Professional roofing restoration, solar panel & battery installation, and property maintenance across Victoria and NSW."
-    }
-    </script>
-
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FAF6F0',
+                        espresso: '#2D1E18',
+                        'espresso-light': '#3D2B23',
+                        'espresso-dark': '#1F1410',
+                        'orange-primary': '#F26522',
+                        'orange-hover': '#D95314',
+                        peach: '#F8C67B',
+                        charcoal: '#1A110E',
+                        'sand-light': '#F3ECE3'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft-card': '0 10px 30px -5px rgba(45, 30, 24, 0.08)',
+                        'orange-glow': '0 8px 25px -4px rgba(242, 101, 34, 0.4)'
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
-        :root {
-            --bg-cream: #FAF6F0;
-            --bg-card: #FFFFFF;
-            --bg-dark: #2D1E18;
-            --primary-orange: #F26522;
-            --primary-orange-hover: #D95314;
-            --accent-sand: #F8C67B;
-            --text-dark: #1A110E;
-            --text-muted: #665A55;
-            --text-light: #FAF6F0;
-            --whatsapp-green: #25D366;
-            --whatsapp-hover: #1EBE57;
-            --border-subtle: #E8DFD5;
-            --radius-lg: 20px;
-            --radius-md: 12px;
-            --shadow-soft: 0 10px 30px rgba(45, 30, 24, 0.05);
-            --shadow-hover: 0 15px 35px rgba(242, 101, 34, 0.12);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            scroll-behavior: smooth;
-        }
-
         body {
-            background-color: var(--bg-cream);
-            color: var(--text-dark);
-            line-height: 1.6;
+            background-color: #FAF6F0;
+            color: #1A110E;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF6F0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2D1E18;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #F26522;
         }
 
-        /* Top Notification Bar */
-        .top-bar {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            padding: 8px 5%;
-            font-size: 0.85rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .top-bar-info {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        /* Main Navigation */
-        .header-nav {
-            background-color: rgba(250, 246, 240, 0.95);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-subtle);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* Fitted Logo Holder for GitHub Repository */
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-holder {
-            height: 52px;
-            max-width: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-        }
-
-        .logo-img {
-            max-height: 52px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            transition: color 0.2s ease;
+        /* Active Navigation Tab Pill */
+        .nav-link.active {
+            color: #F26522 !important;
+            font-weight: 700;
             position: relative;
         }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary-orange);
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            border: none;
-        }
-
-        .btn-orange {
-            background-color: var(--primary-orange);
-            color: #FFFFFF;
-        }
-
-        .btn-orange:hover {
-            background-color: var(--primary-orange-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(242, 101, 34, 0.3);
-        }
-
-        .btn-whatsapp {
-            background-color: var(--whatsapp-green);
-            color: #FFFFFF;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: var(--whatsapp-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: var(--text-dark);
-        }
-
-        /* Hash Navigation SPA Views */
-        .page-view {
-            display: none;
-            padding-bottom: 60px;
-        }
-
-        .page-view.active {
-            display: block;
-            animation: fadeIn 0.35s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .section-header {
-            text-align: center;
-            margin: 45px 0 30px;
-        }
-
-        .eyebrow-pill {
-            display: inline-block;
-            background-color: rgba(242, 101, 34, 0.1);
-            color: var(--primary-orange);
-            font-size: 0.8rem;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            padding: 6px 16px;
-            border-radius: 30px;
-            margin-bottom: 12px;
-        }
-
-        .section-title {
-            font-size: 2.1rem;
-            font-weight: 800;
-            color: var(--text-dark);
-            margin-bottom: 10px;
-        }
-
-        .section-desc {
-            color: var(--text-muted);
-            max-width: 650px;
-            margin: 0 auto;
-            font-size: 1.05rem;
-        }
-
-        /* Hero Layout */
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .hero-dark-card {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            border-radius: var(--radius-lg);
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .owner-profile {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin: 25px 0;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: var(--radius-md);
-            border: 1px solid rgba(248, 198, 123, 0.2);
-        }
-
-        .owner-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: var(--primary-orange);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #FFF;
-            border: 2px solid var(--accent-sand);
-        }
-
-        .owner-details h4 {
-            font-size: 1.15rem;
-            color: var(--accent-sand);
-        }
-
-        .owner-details p {
-            font-size: 0.85rem;
-            color: rgba(250, 246, 240, 0.85);
-        }
-
-        .hero-light-card {
-            background-color: var(--bg-card);
-            border-radius: var(--radius-lg);
-            padding: 35px;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid var(--border-subtle);
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .service-card {
-            background-color: var(--bg-card);
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            border: 1px solid var(--border-subtle);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--primary-orange);
-        }
-
-        .service-icon {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-
-        /* Bold Location Coverage Line */
-        .coverage-banner {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            text-align: center;
-            padding: 25px 20px;
-            border-radius: var(--radius-lg);
-            margin: 25px 0 35px;
-            border: 2px solid var(--primary-orange);
-        }
-
-        .coverage-banner h2 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--accent-sand);
-            text-transform: uppercase;
-        }
-
-        .locations-dual-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .location-column {
-            background-color: var(--bg-card);
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            border: 1px solid var(--border-subtle);
-        }
-
-        .office-list {
-            list-style: none;
-        }
-
-        .office-item {
-            padding: 12px 0;
-            border-bottom: 1px dashed var(--border-subtle);
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        /* Solar & Roofing Page Styling */
-        .solar-roof-hero {
-            background: linear-gradient(135deg, var(--bg-dark) 0%, #422B22 100%);
-            color: var(--text-light);
-            border-radius: var(--radius-lg);
-            padding: 45px 35px;
-            margin-bottom: 35px;
-        }
-
-        .feature-block {
-            background: var(--bg-card);
-            border-radius: var(--radius-lg);
-            padding: 35px;
-            margin-bottom: 25px;
-            border: 1px solid var(--border-subtle);
-        }
-
-        .feature-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 12px;
-            list-style: none;
-            margin-top: 18px;
-        }
-
-        .feature-list li {
-            background-color: var(--bg-cream);
-            padding: 12px 16px;
-            border-radius: var(--radius-md);
-            font-size: 0.95rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .feature-list li::before {
-            content: '✓';
-            color: var(--primary-orange);
-            font-weight: 800;
-        }
-
-        /* Reviews Section on Home Page */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
-        }
-
-        .review-card {
-            background-color: var(--bg-card);
-            border-radius: var(--radius-lg);
-            padding: 25px;
-            border: 1px solid var(--border-subtle);
-            box-shadow: var(--shadow-soft);
-        }
-
-        .review-stars {
-            color: #FFC107;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-
-        /* Contact Dual Forms */
-        .contact-dual-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .form-card {
-            background-color: var(--bg-card);
-            border-radius: var(--radius-lg);
-            padding: 35px;
-            border: 1px solid var(--border-subtle);
-            box-shadow: var(--shadow-soft);
-        }
-
-        .form-card.wa-card { border-top: 5px solid var(--whatsapp-green); }
-        .form-card.email-card { border-top: 5px solid var(--primary-orange); }
-
-        .form-group { margin-bottom: 18px; }
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 6px;
-            color: var(--text-dark);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-subtle);
-            background-color: var(--bg-cream);
-            font-size: 0.95rem;
-        }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 110px;
-        }
-
-        footer {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            padding: 45px 5% 25px;
-            margin-top: 60px;
-            font-size: 0.9rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(250, 246, 240, 0.6);
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 900px) {
-            .hero-grid, .locations-dual-grid, .contact-dual-grid, .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            .mobile-menu-btn { display: block; }
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--bg-cream);
-                flex-direction: column;
-                padding: 20px;
-                border-bottom: 1px solid var(--border-subtle);
-            }
-            .nav-links.mobile-active { display: flex; }
-            .top-bar { flex-direction: column; gap: 5px; text-align: center; }
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 3px;
+            background-color: #F26522;
+            border-radius: 99px;
         }
     </style>
 </head>
-<body>
+<body class="antialiased text-charcoal flex flex-col min-h-screen">
 
-    <!-- TOP INFORMATION BAR -->
-    <div class="top-bar">
-        <div class="top-bar-info">
-            <span>📍 Victoria & NSW Service Coverage</span>
-            <span>📞 <a href="tel:0480858790" style="color:inherit;">0480 858 790</a></span>
-            <span>✉️ <a href="mailto:alexpeterson876@gmail.com" style="color:inherit;">alexpeterson876@gmail.com</a></span>
-        </div>
-        <div>
-            <span>👤 Owner & Director: <strong>Alex Peterson</strong></span>
-        </div>
-    </div>
-
-    <!-- MAIN HEADER NAVIGATION WITH LOGO HOLDER -->
-    <header class="header-nav">
-         <a href="#home" onclick="switchPage('home')" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-    <div style="background-color: #722E1A; width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF">
-            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-        </svg>
-    </div>
-    <div style="display: flex; flex-direction: column;">
-        <span style="font-weight: 800; font-size: 1.45rem; color: #1A110E; line-height: 1; letter-spacing: -0.5px;">
-            SINPRO<span style="color: #F26522;">.</span>
-        </span>
-        <span style="font-weight: 700; font-size: 0.65rem; color: #665A55; letter-spacing: 1.5px; margin-top: 3px; text-transform: uppercase;">
-            Building Maintenance
-        </span>
-    </div>
-</a>
-            <div style="display: flex; flex-direction: column;">
-                <span style="font-weight: 800; font-size: 1.45rem; color: #1A110E; line-height: 1; letter-spacing: -0.5px;">
-                    SINPRO<span style="color: var(--primary-orange);">.</span>
-                </span>
-                <span style="font-weight: 700; font-size: 0.65rem; color: #665A55; letter-spacing: 1.5px; margin-top: 3px; text-transform: uppercase;">
-                    Building Maintenance
-                </span>
+    <!-- Top Announcement & Quick Contact Bar -->
+    <header class="w-full z-50 sticky top-0 bg-cream border-b border-sand-light shadow-sm">
+        <div class="bg-espresso text-cream text-xs sm:text-sm py-2 px-4">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+                <div class="flex items-center gap-6">
+                    <a href="https://wa.me/61480858790" target="_blank" class="flex items-center gap-2 hover:text-peach transition-colors">
+                        <i class="fa-brands fa-whatsapp text-green-400 text-base"></i>
+                        <span class="font-semibold">+61 480 858 790</span>
+                    </a>
+                    <a href="mailto:sinprobuildingmaintenance@gmail.com" class="hidden md:flex items-center gap-2 hover:text-peach transition-colors">
+                        <i class="fa-solid fa-envelope text-orange-primary"></i>
+                        <span>sinprobuildingmaintenance@gmail.com</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="bg-orange-primary/20 text-orange-primary text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider">
+                        We Cover All Victoria & NSW
+                    </span>
+                    <a href="https://www.facebook.com/profile.php?id=61584064917621" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-peach transition-colors" title="Follow us on Facebook">
+                        <i class="fa-brands fa-facebook text-base text-orange-primary"></i>
+                        <span class="hidden sm:inline text-xs">Facebook Page</span>
+                    </a>
+                </div>
             </div>
-        </a>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
 
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home" class="nav-link active" onclick="switchPage('home')">Home</a></li>
-            <li><a href="#services" class="nav-link" onclick="switchPage('services')">Services</a></li>
-            <li><a href="#locations" class="nav-link" onclick="switchPage('locations')">Locations</a></li>
-            <li><a href="#solar-roofing" class="nav-link" onclick="switchPage('solar-roofing')">Solar & Roofing</a></li>
-            <li><a href="#contact" class="nav-link" onclick="switchPage('contact')">Contact Us</a></li>
-            <li><a href="#contact" class="btn btn-orange" onclick="switchPage('contact')">Ask for a Free Quote →</a></li>
-        </ul>
+        <!-- Main Navigation Header -->
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 bg-espresso rounded-xl flex items-center justify-center text-orange-primary text-xl font-extrabold shadow-md group-hover:bg-orange-primary group-hover:text-cream transition-all duration-300">
+                    <i class="fa-solid fa-house-chimney-crack"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-espresso leading-none">
+                        SINPRO<span class="text-orange-primary">.</span>
+                    </span>
+                    <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-charcoal/70">
+                        Building Maintenance
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden lg:flex items-center gap-8 font-semibold text-sm">
+                <a href="#home" class="nav-link text-charcoal hover:text-orange-primary transition-colors py-1" id="nav-home">Home</a>
+                <a href="#services" class="nav-link text-charcoal hover:text-orange-primary transition-colors py-1" id="nav-services">Services Hub</a>
+                <a href="#solar" class="nav-link text-charcoal hover:text-orange-primary transition-colors py-1" id="nav-solar">Solar & Renewable Energy</a>
+                <a href="#locations" class="nav-link text-charcoal hover:text-orange-primary transition-colors py-1" id="nav-locations">Locations</a>
+                <a href="#contact" class="nav-link text-charcoal hover:text-orange-primary transition-colors py-1" id="nav-contact">Contact Us</a>
+            </div>
+
+            <!-- Header Action Button -->
+            <div class="flex items-center gap-3">
+                <button onclick="openQuoteModal()" class="bg-orange-primary hover:bg-orange-hover text-white text-xs sm:text-sm font-bold px-5 py-3 rounded-full shadow-orange-glow hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <span>ASK FOR A FREE QUOTE</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                
+                <!-- Mobile Menu Button -->
+                <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg bg-sand-light text-espresso hover:text-orange-primary focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-cream border-b border-sand-light px-6 py-5 space-y-4">
+            <a href="#home" onclick="closeMobileMenu()" class="block text-base font-bold text-espresso hover:text-orange-primary">Home</a>
+            <a href="#services" onclick="closeMobileMenu()" class="block text-base font-bold text-espresso hover:text-orange-primary">Services Hub</a>
+            <a href="#solar" onclick="closeMobileMenu()" class="block text-base font-bold text-espresso hover:text-orange-primary">Solar & Renewable Energy</a>
+            <a href="#locations" onclick="closeMobileMenu()" class="block text-base font-bold text-espresso hover:text-orange-primary">Locations</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="block text-base font-bold text-espresso hover:text-orange-primary">Contact Us</a>
+            <div class="pt-2 border-t border-sand-light flex flex-col gap-2">
+                <a href="https://wa.me/61480858790" target="_blank" class="flex items-center gap-2 text-sm font-bold text-green-600">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp: +61 480 858 790
+                </a>
+                <a href="mailto:sinprobuildingmaintenance@gmail.com" class="flex items-center gap-2 text-sm text-charcoal/80">
+                    <i class="fa-solid fa-envelope"></i> sinprobuildingmaintenance@gmail.com
+                </a>
+            </div>
+        </div>
     </header>
 
-    <!-- ==========================================================================
-         PAGE 1: HOME PAGE
-         ========================================================================== -->
-    <main id="page-home" class="page-view active">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-dark-card">
-                    <div>
-                        <span class="eyebrow-pill" style="background:rgba(248,198,123,0.15); color:var(--accent-sand);">SINPRO BUILDING MAINTENANCE</span>
-                        <h1 style="font-size: 2.2rem; margin-top: 15px; font-weight: 800; line-height: 1.2;">
-                            Complete Building Maintenance & Energy Solutions
-                        </h1>
-                        <p style="margin-top: 15px; color: rgba(250,246,240,0.85); font-size: 1.05rem;">
-                            Your reliable trade partner across Victoria and NSW. Delivering expert solar installations, roofing restoration, and exterior care.
+    <!-- MAIN VIEWS CONTAINER -->
+    <main class="flex-grow">
+
+        <!-- ========================================== -->
+        <!-- PAGE 1: HOME PAGE VIEW (#home)             -->
+        <!-- ========================================== -->
+        <section id="view-home" class="page-view space-y-16 pb-16">
+            
+            <!-- Hero Split Banner -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    
+                    <!-- Hero Left Card (Dark Espresso Container) -->
+                    <div class="lg:col-span-7 bg-espresso text-cream rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-soft-card relative overflow-hidden">
+                        <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-orange-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+                        
+                        <div class="space-y-6 z-10">
+                            <!-- Eyebrow Badge -->
+                            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-primary/20 border border-orange-primary/30 text-peach text-xs font-extrabold uppercase tracking-wider">
+                                <span class="w-2 h-2 rounded-full bg-orange-primary animate-pulse"></span>
+                                SINPRO BUILDING MAINTENANCE
+                            </div>
+
+                            <!-- H1 Heading -->
+                            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+                                Complete Property Maintenance, Roofing & Solar Across <span class="text-orange-primary">Victoria</span> & <span class="text-peach">NSW</span>
+                            </h1>
+
+                            <p class="text-cream/80 text-base sm:text-lg max-w-xl font-normal leading-relaxed">
+                                Professional residential and commercial property maintenance. From high-power gutter vacuuming and window clearing to complete roof restorations and solar energy solutions.
+                            </p>
+
+                            <!-- Highlights Checkmarks -->
+                            <div class="grid grid-cols-2 gap-3 text-sm font-medium pt-2">
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-orange-primary"></i>
+                                    <span>Fully Insured Staff</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-orange-primary"></i>
+                                    <span>Working at Heights Certified</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-orange-primary"></i>
+                                    <span>Coverage Across Victoria & NSW</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-orange-primary"></i>
+                                    <span>100% Quality Assurance</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social & Contact Quick Strip -->
+                        <div class="pt-8 mt-8 border-t border-cream/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 z-10">
+                            <div class="flex items-center gap-3">
+                                <a href="https://wa.me/61480858790" target="_blank" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-xs font-extrabold px-4 py-2.5 rounded-full transition-colors">
+                                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                                    <span>Chat on WhatsApp</span>
+                                </a>
+                                <button onclick="openQuoteModal()" class="inline-flex items-center gap-2 bg-orange-primary hover:bg-orange-hover text-white text-xs font-extrabold px-4 py-2.5 rounded-full transition-colors">
+                                    <span>Ask For A Free Quote</span>
+                                </button>
+                            </div>
+
+                            <a href="https://www.facebook.com/profile.php?id=61584064917621" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-bold text-cream/90 hover:text-orange-primary bg-espresso-light px-4 py-2.5 rounded-full border border-cream/10 transition-colors">
+                                <i class="fa-brands fa-facebook text-orange-primary text-sm"></i>
+                                <span>Facebook Page</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-70"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Right Card (Light Cream Quick Quote Container) -->
+                    <div class="lg:col-span-5 bg-sand-light/70 border border-sand-light rounded-3xl p-8 flex flex-col justify-between shadow-soft-card">
+                        <div>
+                            <div class="flex items-center justify-between mb-6">
+                                <div>
+                                    <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary">Free Quote Request</span>
+                                    <h3 class="text-2xl font-extrabold text-espresso">Ask For A Free Quote</h3>
+                                </div>
+                                <span class="bg-orange-primary/10 text-orange-primary font-bold text-xs px-3 py-1.5 rounded-full">
+                                    Fast Response
+                                </span>
+                            </div>
+
+                            <form id="hero-quick-form" onsubmit="handleHeroSubmit(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Select Required Service</label>
+                                    <select id="hero-service" required class="w-full bg-cream border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso font-semibold focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                                        <option value="Roof Restoration & Maintenance">Roofing Restoration & Repairs</option>
+                                        <option value="Solar & Renewable Energy">Solar, Battery & Heat Pump Installation</option>
+                                        <option value="Gutter Cleaning">Gutter Cleaning & Downpipe Flush</option>
+                                        <option value="Window Cleaning">Window, Flyscreen & Shutter Cleaning</option>
+                                        <option value="General House Cleaning">General House Cleaning</option>
+                                        <option value="End of Lease Cleaning">End of Lease / Move-In Clean</option>
+                                        <option value="Carpet Steam Cleaning">Carpet Steam Cleaning</option>
+                                        <option value="Driveway Pressure Wash">Driveway Pressure Washing</option>
+                                        <option value="Gardening Services">Gardening & Yard Maintenance</option>
+                                    </select>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">State / Region</label>
+                                        <select id="hero-state" required class="w-full bg-cream border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso font-semibold focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                                            <option value="VIC">Victoria (VIC)</option>
+                                            <option value="NSW">New South Wales (NSW)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Phone / WhatsApp</label>
+                                        <input type="tel" id="hero-phone" placeholder="0400 000 000" required class="w-full bg-cream border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Property Suburb / Details</label>
+                                    <textarea id="hero-notes" rows="3" placeholder="Tell us about your property location or requirements..." class="w-full bg-cream border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:ring-2 focus:ring-orange-primary resize-none"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-orange-primary hover:bg-orange-hover text-white font-extrabold text-sm py-4 rounded-xl shadow-orange-glow transition-all flex items-center justify-center gap-2 group">
+                                    <span>ASK FOR A FREE QUOTE NOW</span>
+                                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Client Reviews Section directly on 1st Page -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+                <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary bg-orange-primary/10 px-4 py-1.5 rounded-full">
+                        Customer Feedback
+                    </span>
+                    <h2 class="text-3xl font-extrabold text-espresso">
+                        What Our Clients Say
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-cream border border-sand-light p-6 rounded-2xl shadow-soft-card space-y-3">
+                        <div class="flex items-center gap-1 text-orange-primary text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm font-semibold text-espresso italic">
+                            "Great jobs, my roof was cleaned and repointed. Looks brand new!"
                         </p>
+                        <p class="text-xs text-charcoal/60 font-bold">— Verified Customer</p>
                     </div>
 
-                    <div class="owner-profile">
-                        <div class="owner-avatar">AP</div>
-                        <div class="owner-details">
-                            <h4>Alex Peterson</h4>
-                            <p>Managing Director</p>
-                            <p style="color:var(--accent-sand); font-size: 0.8rem; margin-top: 2px;">✉️ alexpeterson876@gmail.com</p>
+                    <div class="bg-cream border border-sand-light p-6 rounded-2xl shadow-soft-card space-y-3">
+                        <div class="flex items-center gap-1 text-orange-primary text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm font-semibold text-espresso italic">
+                            "They are very punctual and professional. Showed up right on time and did a thorough job."
+                        </p>
+                        <p class="text-xs text-charcoal/60 font-bold">— Verified Customer</p>
+                    </div>
+
+                    <div class="bg-cream border border-sand-light p-6 rounded-2xl shadow-soft-card space-y-3">
+                        <div class="flex items-center gap-1 text-orange-primary text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm font-semibold text-espresso italic">
+                            "My vendor for past 3 years. Always consistent quality service across all properties."
+                        </p>
+                        <p class="text-xs text-charcoal/60 font-bold">— Long-term Commercial Client</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Services Grid Section -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary bg-orange-primary/10 px-4 py-1.5 rounded-full">
+                        Property Solutions
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-espresso">
+                        Our Core Maintenance & Energy Services
+                    </h2>
+                    <p class="text-charcoal/70 text-base">
+                        Engineered to enhance property value, improve energy efficiency, and maintain spotless aesthetics.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Roofing Restoration Card -->
+                    <div class="bg-cream border border-sand-light rounded-2xl p-6 shadow-soft-card hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-espresso text-orange-primary flex items-center justify-center text-2xl group-hover:bg-orange-primary group-hover:text-cream transition-colors">
+                                <i class="fa-solid fa-house-chimney"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-espresso">Roofing Restoration</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                Professional roof washing, tile replacement, repointing, leak repairs, and protective coating.
+                            </p>
+                            <ul class="text-xs space-y-2 font-medium text-charcoal/80">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Moss, dirt & build-up removal</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Mortar repairs & rebedding</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-orange-primary">Free Onsite Quotation</span>
+                            <button onclick="openQuoteModal('Roofing Restoration')" class="text-xs font-extrabold text-orange-primary hover:text-orange-hover flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Ask for a Quote <i class="fa-solid fa-chevron-right"></i>
+                            </button>
                         </div>
                     </div>
 
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <button class="btn btn-orange" onclick="switchPage('contact')">Ask for a Free Quote →</button>
-                        <a href="https://wa.me/61480858790" target="_blank" class="btn btn-whatsapp">Chat on WhatsApp 💬</a>
+                    <!-- Solar & Energy Card -->
+                    <div class="bg-cream border border-sand-light rounded-2xl p-6 shadow-soft-card hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-espresso text-orange-primary flex items-center justify-center text-2xl group-hover:bg-orange-primary group-hover:text-cream transition-colors">
+                                <i class="fa-solid fa-solar-panel"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-espresso">Solar & Heat Pump Systems</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                Complete installation for solar panels, battery storage, inverters, and heat pump water systems.
+                            </p>
+                            <ul class="text-xs space-y-2 font-medium text-charcoal/80">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Residential & Commercial</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Renewable energy solutions</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-orange-primary">Free Quote Available</span>
+                            <a href="#solar" class="text-xs font-extrabold text-orange-primary hover:text-orange-hover flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Learn More <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
 
-                <div class="hero-light-card">
-                    <span class="eyebrow-pill">FREE ONSITE QUOTATION</span>
-                    <h2 style="font-size: 1.6rem; margin: 10px 0 15px;">What Service Do You Need?</h2>
-                    <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">
-                        Select a category below to submit an inquiry directly to Alex Peterson.
+                    <!-- Gutter Cleaning -->
+                    <div class="bg-cream border border-sand-light rounded-2xl p-6 shadow-soft-card hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-espresso text-orange-primary flex items-center justify-center text-2xl group-hover:bg-orange-primary group-hover:text-cream transition-colors">
+                                <i class="fa-solid fa-cloud-rain"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-espresso">Gutter Cleaning & Flush</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                High-vacuum leaf clearance and downpipe water flushing for maximum roof drainage safety.
+                            </p>
+                            <ul class="text-xs space-y-2 font-medium text-charcoal/80">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Downpipe blockage clearing</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Before & After inspection</li>
+                            </ul>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-orange-primary">Free Quote</span>
+                            <button onclick="openQuoteModal('Gutter Cleaning')" class="text-xs font-extrabold text-orange-primary hover:text-orange-hover flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Ask for a Quote <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Window Cleaning -->
+                    <div class="bg-cream border border-sand-light rounded-2xl p-6 shadow-soft-card hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-espresso text-orange-primary flex items-center justify-center text-2xl group-hover:bg-orange-primary group-hover:text-cream transition-colors">
+                                <i class="fa-solid fa-border-all"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-espresso">Window & Flyscreen Cleaning</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                Pure water streak-free window cleaning for multi-storey properties, flyscreens, and shutters.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-orange-primary">Free Quote</span>
+                            <button onclick="openQuoteModal('Window Cleaning')" class="text-xs font-extrabold text-orange-primary hover:text-orange-hover flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Ask for a Quote <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- End of Lease Cleaning -->
+                    <div class="bg-cream border border-sand-light rounded-2xl p-6 shadow-soft-card hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-espresso text-orange-primary flex items-center justify-center text-2xl group-hover:bg-orange-primary group-hover:text-cream transition-colors">
+                                <i class="fa-solid fa-key"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-espresso">End of Lease Deep Clean</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                Detailed bond back cleaning meeting agent checklists for exit inspections.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-orange-primary">Free Quote</span>
+                            <button onclick="openQuoteModal('End of Lease Cleaning')" class="text-xs font-extrabold text-orange-primary hover:text-orange-hover flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Ask for a Quote <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pressure Washing & Outdoor -->
+                    <div class="bg-cream border border-sand-light rounded-2xl p-6 shadow-soft-card hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="space-y-4">
+                            <div class="w-14 h-14 rounded-2xl bg-espresso text-orange-primary flex items-center justify-center text-2xl group-hover:bg-orange-primary group-hover:text-cream transition-colors">
+                                <i class="fa-solid fa-spray-can"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-espresso">Driveway & Surface Wash</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                High-pressure cleaning for driveways, concrete, pavers, and garden maintenance.
+                            </p>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-orange-primary">Free Quote</span>
+                            <button onclick="openQuoteModal('Driveway Pressure Wash')" class="text-xs font-extrabold text-orange-primary hover:text-orange-hover flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                                Ask for a Quote <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- PAGE 2: SERVICES HUB VIEW (#services)      -->
+        <!-- ========================================== -->
+        <section id="view-services" class="page-view hidden space-y-12 py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary bg-orange-primary/10 px-4 py-1.5 rounded-full">
+                        Full Service Scope
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-espresso">
+                        Roofing Restoration & Property Care Services
+                    </h2>
+                    <p class="text-charcoal/70 text-base">
+                        Get a Free Onsite Quotation for all property maintenance and roofing requirements.
                     </p>
+                </div>
 
-                    <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <button onclick="switchPage('solar-roofing')" class="btn" style="background:var(--bg-cream); justify-content:space-between; border:1px solid var(--border-subtle); color:var(--text-dark);">
-                            <span>☀️ Solar, Battery, Inverter & Heat Pump</span>
-                            <span style="color:var(--primary-orange);">Explore →</span>
-                        </button>
-                        <button onclick="switchPage('solar-roofing')" class="btn" style="background:var(--bg-cream); justify-content:space-between; border:1px solid var(--border-subtle); color:var(--text-dark);">
-                            <span>🏠 Roof Washing, Repairs & Restoration</span>
-                            <span style="color:var(--primary-orange);">Explore →</span>
-                        </button>
-                        <button onclick="switchPage('services')" class="btn" style="background:var(--bg-cream); justify-content:space-between; border:1px solid var(--border-subtle); color:var(--text-dark);">
-                            <span>🧹 Gutter, Window & Building Cleaning</span>
-                            <span style="color:var(--primary-orange);">Explore →</span>
-                        </button>
-                        <button onclick="switchPage('locations')" class="btn" style="background:var(--bg-cream); justify-content:space-between; border:1px solid var(--border-subtle); color:var(--text-dark);">
-                            <span>📍 View 7 Offices (VIC & NSW)</span>
-                            <span style="color:var(--primary-orange);">View →</span>
+                <!-- Detailed Roofing Restoration Highlight Card -->
+                <div class="bg-espresso text-cream rounded-3xl p-8 sm:p-10 shadow-xl space-y-6 mb-12">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-cream/10 pb-6">
+                        <div>
+                            <span class="text-xs font-extrabold uppercase tracking-widest text-peach">Highlighted Service</span>
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Get a Free Onsite Quotation for Roofing</h3>
+                        </div>
+                        <button onclick="openQuoteModal('Roofing Restoration')" class="bg-orange-primary hover:bg-orange-hover text-white text-xs font-extrabold px-6 py-3.5 rounded-xl transition-all shadow-orange-glow">
+                            ASK FOR A FREE QUOTE
                         </button>
                     </div>
 
-                    <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border-subtle); text-align: center;">
-                        <p style="font-weight: 700; color: var(--text-dark);">Urgent Inquiries Call Directly:</p>
-                        <a href="tel:0480858790" style="font-size: 1.3rem; font-weight: 800; color: var(--primary-orange); display: block; margin-top: 4px;">📞 0480 858 790</a>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-orange-primary text-base mt-1"></i>
+                            <span class="text-cream/90">Professional roof washing and removal of moss, dirt and build-up</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-orange-primary text-base mt-1"></i>
+                            <span class="text-cream/90">Repointing and sealing of the roof</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-orange-primary text-base mt-1"></i>
+                            <span class="text-cream/90">Mortar repairs and rebedding where required</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-orange-primary text-base mt-1"></i>
+                            <span class="text-cream/90">Replacement of broken or damaged roof tiles</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-orange-primary text-base mt-1"></i>
+                            <span class="text-cream/90">Repairing and sealing roof leaks</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-orange-primary text-base mt-1"></i>
+                            <span class="text-cream/90">Roof maintenance and restoration of deteriorated areas</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-orange-primary text-base mt-1"></i>
+                            <span class="text-cream/90">Professional roof painting and protective coating to refresh and protect the roof</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-orange-primary text-base mt-1"></i>
+                            <span class="text-cream/90">Final clean-up to leave the roof looking neat and well maintained</span>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Detailed Services Cards Stack -->
+                <div class="space-y-8">
+                    
+                    <!-- Expanded Card: Gutter Cleaning -->
+                    <div class="bg-cream border border-sand-light rounded-3xl p-6 sm:p-8 shadow-soft-card grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                        <div class="lg:col-span-8 space-y-4">
+                            <span class="bg-orange-primary/10 text-orange-primary text-xs font-extrabold px-3 py-1 rounded-full uppercase">Exterior Care</span>
+                            <h3 class="text-2xl font-extrabold text-espresso">Gutter Vacuum Cleaning & Downpipe Wash</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                Clogged gutters cause severe rainwater overflow and costly roof timber rot. Our team utilizes high-power vacuum machines to extract dirt, moss, pine needles, and stagnant water.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-4 bg-sand-light/60 p-6 rounded-2xl flex flex-col justify-between items-center text-center space-y-4">
+                            <div>
+                                <span class="text-xs text-charcoal/70 uppercase font-bold block">Customized Inspection</span>
+                                <span class="text-base font-extrabold text-orange-primary">Ask For A Free Quote</span>
+                            </div>
+                            <button onclick="openQuoteModal('Gutter Cleaning')" class="w-full bg-orange-primary hover:bg-orange-hover text-white text-xs font-extrabold py-3.5 rounded-xl shadow-orange-glow transition-all">
+                                REQUEST FREE QUOTE
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Expanded Card: Window Cleaning -->
+                    <div class="bg-cream border border-sand-light rounded-3xl p-6 sm:p-8 shadow-soft-card grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                        <div class="lg:col-span-8 space-y-4">
+                            <span class="bg-orange-primary/10 text-orange-primary text-xs font-extrabold px-3 py-1 rounded-full uppercase">Glass & Window</span>
+                            <h3 class="text-2xl font-extrabold text-espresso">Pure Water Window & Shutter Detailing</h3>
+                            <p class="text-sm text-charcoal/70 leading-relaxed">
+                                We utilize pure water filtration poles to wash exterior glass without leaving water spots or soap film. Frames, tracks, and flyscreens included.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-4 bg-sand-light/60 p-6 rounded-2xl flex flex-col justify-between items-center text-center space-y-4">
+                            <div>
+                                <span class="text-xs text-charcoal/70 uppercase font-bold block">Residential & Commercial</span>
+                                <span class="text-base font-extrabold text-orange-primary">Ask For A Free Quote</span>
+                            </div>
+                            <button onclick="openQuoteModal('Window Cleaning')" class="w-full bg-orange-primary hover:bg-orange-hover text-white text-xs font-extrabold py-3.5 rounded-xl shadow-orange-glow transition-all">
+                                REQUEST FREE QUOTE
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+        </section>
 
-            <!-- CORE SERVICES GRID -->
-            <div class="section-header">
-                <span class="eyebrow-pill">OUR SERVICES</span>
-                <h2 class="section-title">High Quality Property Maintenance</h2>
-                <p class="section-desc">Dependable solutions for residential homes, rental portfolios, and commercial sites.</p>
-            </div>
 
-            <div class="services-grid">
-                <div class="service-card">
-                    <div>
-                        <span class="service-icon">🧹</span>
-                        <h3>Gutter Cleaning</h3>
-                        <p>Complete removal of leaves, dirt, sludge, and downpipe flushing to safeguard your property.</p>
-                    </div>
-                    <button class="btn btn-orange" onclick="switchPage('contact')" style="width: 100%;">Ask for a Free Quote</button>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <span class="service-icon">🪟</span>
-                        <h3>Window & Flyscreen Cleaning</h3>
-                        <p>Streak-free interior and exterior glass cleaning, flyscreen restoration, and frame washing.</p>
-                    </div>
-                    <button class="btn btn-orange" onclick="switchPage('contact')" style="width: 100%;">Ask for a Free Quote</button>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <span class="service-icon">🏠</span>
-                        <h3>General House Cleaning</h3>
-                        <p>Deep interior refreshes, recurring property care, and tailored maintenance checklists.</p>
-                    </div>
-                    <button class="btn btn-orange" onclick="switchPage('contact')" style="width: 100%;">Ask for a Free Quote</button>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <span class="service-icon">☀️</span>
-                        <h3>Solar Panel & Battery Installation</h3>
-                        <p>Solar system design, panel installation, battery storage integration, and heat pump setups.</p>
-                    </div>
-                    <button class="btn btn-orange" onclick="switchPage('solar-roofing')" style="width: 100%;">Explore Solar & Quote</button>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <span class="service-icon">🛠️</span>
-                        <h3>Roof Restoration & Repairs</h3>
-                        <p>Moss washing, repointing, tile replacement, leak sealing, and protective roof painting.</p>
-                    </div>
-                    <button class="btn btn-orange" onclick="switchPage('solar-roofing')" style="width: 100%;">Explore Roofing & Quote</button>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <span class="service-icon">🏢</span>
-                        <h3>Commercial Building Maintenance</h3>
-                        <p>Scheduled maintenance contracts for office parks, retail spaces, and industrial sites.</p>
-                    </div>
-                    <button class="btn btn-orange" onclick="switchPage('contact')" style="width: 100%;">Ask for a Free Quote</button>
-                </div>
-            </div>
-
-            <!-- REVIEWS SECTION -->
-            <div class="section-header">
-                <span class="eyebrow-pill">CLIENT REVIEWS</span>
-                <h2 class="section-title">Feedback From Property Owners</h2>
-                <p class="section-desc">See what our clients say about our punctuality, quality, and roof restoration work.</p>
-            </div>
-
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p style="font-style: italic; margin-bottom: 15px; font-size: 0.95rem;">"Great jobs! My roof was cleaned perfectly, mortar rebedded and painted. Looks like a brand new roof."</p>
-                    <div style="font-weight: 700; font-size: 0.88rem; color: var(--text-muted); border-top: 1px solid var(--bg-cream); padding-top: 10px;">— Homeowner, Victoria</div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p style="font-style: italic; margin-bottom: 15px; font-size: 0.95rem;">"They are very punctual and professional. Showed up right on time for the solar panel cleaning and gutter flushing."</p>
-                    <div style="font-weight: 700; font-size: 0.88rem; color: var(--text-muted); border-top: 1px solid var(--bg-cream); padding-top: 10px;">— Resident, New South Wales</div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p style="font-style: italic; margin-bottom: 15px; font-size: 0.95rem;">"Sinpro has been my primary maintenance vendor for the past 3 years. Alex Peterson always delivers fast quotes and reliable work."</p>
-                    <div style="font-weight: 700; font-size: 0.88rem; color: var(--text-muted); border-top: 1px solid var(--bg-cream); padding-top: 10px;">— Property Manager</div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- ==========================================================================
-         PAGE 2: SERVICES CATALOG
-         ========================================================================== -->
-    <main id="page-services" class="page-view">
-        <div class="container">
-            <div class="section-header">
-                <span class="eyebrow-pill">SERVICE CATALOG</span>
-                <h2 class="section-title">Property Maintenance Services</h2>
-                <p class="section-desc">Providing comprehensive cleaning and upkeep for homes and commercial assets across VIC & NSW.</p>
-            </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <div>
-                        <span class="service-icon">🧹</span>
-                        <h3>Gutter & Downpipe Cleaning</h3>
-                        <p>Complete removal of leaves, sludge, and blockage to maintain proper roof drainage and fire safety.</p>
-                    </div>
-                    <button class="btn btn-orange" onclick="switchPage('contact')" style="width: 100%;">Ask for a Free Quote</button>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <span class="service-icon">🪟</span>
-                        <h3>Window, Flyscreen & Shutters</h3>
-                        <p>Pure-water exterior window cleaning, screen repairs, shutter cleaning, and frame restoration.</p>
-                    </div>
-                    <button class="btn btn-orange" onclick="switchPage('contact')" style="width: 100%;">Ask for a Free Quote</button>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <span class="service-icon">🧼</span>
-                        <h3>Carpet Steam Cleaning</h3>
-                        <p>Deep steam stain extraction, odor removal, and carpet rejuvenation for home interiors and offices.</p>
-                    </div>
-                    <button class="btn btn-orange" onclick="switchPage('contact')" style="width: 100%;">Ask for a Free Quote</button>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <span class="service-icon">🔑</span>
-                        <h3>End of Lease Cleaning</h3>
-                        <p>Thorough bond-back cleaning meeting strict property management requirements.</p>
-                    </div>
-                    <button class="btn btn-orange" onclick="switchPage('contact')" style="width: 100%;">Ask for a Free Quote</button>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <span class="service-icon">💦</span>
-                        <h3>Driveway High-Pressure Cleaning</h3>
-                        <p>Oil stain treatment, algae removal, and deep concrete cleaning for driveways and walkways.</p>
-                    </div>
-                    <button class="btn btn-orange" onclick="switchPage('contact')" style="width: 100%;">Ask for a Free Quote</button>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <span class="service-icon">🌿</span>
-                        <h3>Gardening & Outdoor Upkeep</h3>
-                        <p>Lawn mowing, hedge trimming, garden weeding, and green waste disposal.</p>
-                    </div>
-                    <button class="btn btn-orange" onclick="switchPage('contact')" style="width: 100%;">Ask for a Free Quote</button>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- ==========================================================================
-         PAGE 3: LOCATIONS DIRECTORY
-         ========================================================================== -->
-    <main id="page-locations" class="page-view">
-        <div class="container">
-            <div class="section-header">
-                <span class="eyebrow-pill">SERVICE REGIONS</span>
-                <h2 class="section-title">Our Physical Hubs</h2>
-                <p class="section-desc">Mobile service teams stationed across strategic locations in Victoria and New South Wales.</p>
-            </div>
-
-            <!-- BOLD HIGHLIGHTED COVERAGE LINE REQUIREMENT -->
-            <div class="coverage-banner">
-                <h2>We cover the whole Victoria and NSW</h2>
-                <p style="margin-top: 8px; color: rgba(250,246,240,0.9); font-size: 1.05rem;">
-                    Prompt Onsite Inspections & Free Quotes Across Both States
-                </p>
-            </div>
-
-            <div class="locations-dual-grid">
-                <!-- Victoria Offices -->
-                <div class="location-column">
-                    <h3 style="color:var(--primary-orange); margin-bottom:20px; border-bottom:2px solid var(--bg-cream); padding-bottom:10px;">
-                        📍 Victoria Offices
+        <!-- ========================================== -->
+        <!-- PAGE 3: SOLAR & RENEWABLE ENERGY (#solar)  -->
+        <!-- ========================================== -->
+        <section id="view-solar" class="page-view hidden space-y-12 py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <!-- Solar Header Banner -->
+                <div class="bg-espresso text-cream rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden space-y-4">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary bg-orange-primary/20 border border-orange-primary/30 px-4 py-1.5 rounded-full inline-block">
+                        Renewable Energy Solutions
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight">
+                        Solar, Battery, Inverter & Heat Pump Installation
+                    </h2>
+                    <h3 class="text-xl sm:text-2xl font-bold text-peach">
+                        Smarter Energy Solutions for Your Home or Business
                     </h3>
-                    <ul class="office-list">
-                        <li class="office-item">
-                            <span>🏢</span>
-                            <div>
-                                <strong>Coburg North Office</strong>
-                                <p style="color:var(--text-muted); font-size:0.9rem;">Lorensen Ave, Coburg North VIC 3058</p>
-                            </div>
-                        </li>
-                        <li class="office-item">
-                            <span>🏢</span>
-                            <div>
-                                <strong>Werribee Hub</strong>
-                                <p style="color:var(--text-muted); font-size:0.9rem;">Niagara Way, Werribee VIC 3030</p>
-                            </div>
-                        </li>
-                        <li class="office-item">
-                            <span>🏢</span>
-                            <div>
-                                <strong>Dandenong Branch</strong>
-                                <p style="color:var(--text-muted); font-size:0.9rem;">Norman Ct, Dandenong VIC 3175</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- New South Wales Offices -->
-                <div class="location-column">
-                    <h3 style="color:var(--primary-orange); margin-bottom:20px; border-bottom:2px solid var(--bg-cream); padding-bottom:10px;">
-                        📍 New South Wales Offices
-                    </h3>
-                    <ul class="office-list">
-                        <li class="office-item">
-                            <span>🏢</span>
-                            <div>
-                                <strong>St Marys Hub</strong>
-                                <p style="color:var(--text-muted); font-size:0.9rem;">Sainsbury St, St Marys NSW 2760</p>
-                            </div>
-                        </li>
-                        <li class="office-item">
-                            <span>🏢</span>
-                            <div>
-                                <strong>Rockdale Office</strong>
-                                <p style="color:var(--text-muted); font-size:0.9rem;">George St, Rockdale NSW 2216</p>
-                            </div>
-                        </li>
-                        <li class="office-item">
-                            <span>🏢</span>
-                            <div>
-                                <strong>Campbelltown Branch</strong>
-                                <p style="color:var(--text-muted); font-size:0.9rem;">Queen St, Campbelltown NSW 2560</p>
-                            </div>
-                        </li>
-                        <li class="office-item">
-                            <span>🏢</span>
-                            <div>
-                                <strong>Newcastle Operations</strong>
-                                <p style="color:var(--text-muted); font-size:0.9rem;">Thorn St, Newcastle NSW 2300</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- ==========================================================================
-         PAGE 4: DEDICATED SOLAR & ROOFING RESTORATION PAGE
-         ========================================================================== -->
-    <main id="page-solar-roofing" class="page-view">
-        <div class="container">
-            <div class="solar-roof-hero">
-                <span class="eyebrow-pill" style="background:rgba(248,198,123,0.2); color:var(--accent-sand);">SPECIALIZED ENERGY & ROOF CARE</span>
-                <h1 style="font-size: 2.2rem; font-weight: 800; margin-top: 15px;">
-                    Solar, Battery, Inverter & Heat Pump Installation
-                </h1>
-                <p style="margin-top: 12px; max-width: 750px; color: rgba(250,246,240,0.85); font-size: 1.05rem;">
-                    Smarter Energy Solutions for Your Home or Business. Take control of your energy costs with reliable renewable energy solutions and professional roof restoration.
-                </p>
-                <button onclick="switchPage('contact')" class="btn btn-orange" style="margin-top: 20px;">Ask for a Free Quote →</button>
-            </div>
-
-            <!-- ROOFING RESTORATION SECTION -->
-            <div class="feature-block">
-                <span class="eyebrow-pill">ROOF RESTORATION</span>
-                <h2 style="font-size: 1.6rem; margin: 10px 0 15px;">Get a Free Onsite Quotation for Roofing</h2>
-                <p style="color: var(--text-muted); margin-bottom: 15px;">
-                    Comprehensive roof cleaning, repairs, repointing, and protective painting services:
-                </p>
-
-                <ul class="feature-list">
-                    <li>Professional roof washing and removal of moss, dirt and build-up</li>
-                    <li>Repointing and sealing of the roof</li>
-                    <li>Mortar repairs and rebedding where required</li>
-                    <li>Replacement of broken or damaged roof tiles</li>
-                    <li>Repairing and sealing roof leaks</li>
-                    <li>Roof maintenance and restoration of deteriorated areas</li>
-                    <li>Professional roof painting and protective coating to refresh and protect the roof</li>
-                    <li>Final clean-up to leave the roof looking neat and well maintained</li>
-                </ul>
-
-                <div style="margin-top: 25px;">
-                    <button class="btn btn-orange" onclick="switchPage('contact')">Ask for a Free Onsite Roofing Quote →</button>
-                </div>
-            </div>
-
-            <!-- SOLAR PANEL INSTALLATION -->
-            <div class="feature-block">
-                <h3>☀️ Solar Panel Installation</h3>
-                <p style="color: var(--text-muted); margin-top: 8px;">
-                    Generate your own clean electricity with a professionally installed solar panel system. We help you choose a system based on your property, electricity usage, available roof space and energy requirements.
-                </p>
-                <ul class="feature-list">
-                    <li>Solar system design and planning</li>
-                    <li>Residential solar panel installation</li>
-                    <li>Commercial solar panel installation</li>
-                    <li>Roof-mounted solar systems</li>
-                    <li>Solar panel replacement and upgrades</li>
-                    <li>System inspections and maintenance</li>
-                    <li>Performance and efficiency checks</li>
-                    <li>Solar panel cleaning</li>
-                </ul>
-            </div>
-
-            <!-- BATTERY STORAGE INSTALLATION -->
-            <div class="feature-block">
-                <h3>🔋 Battery Storage Installation</h3>
-                <p style="color: var(--text-muted); margin-top: 8px;">
-                    Store excess solar energy and use it when you need it most. A home battery can help you make greater use of electricity generated by your solar system, particularly during the evening.
-                </p>
-                <ul class="feature-list">
-                    <li>Home battery system installation</li>
-                    <li>Solar battery integration</li>
-                    <li>Battery system upgrades</li>
-                    <li>Battery replacement</li>
-                    <li>Energy storage solutions</li>
-                    <li>System testing and commissioning</li>
-                </ul>
-            </div>
-
-            <!-- SOLAR INVERTER INSTALLATION -->
-            <div class="feature-block">
-                <h3>⚡ Solar Inverter Installation</h3>
-                <p style="color: var(--text-muted); margin-top: 8px;">
-                    The inverter is an essential component converting solar panel output into usable AC electricity for your home or business premises.
-                </p>
-                <ul class="feature-list">
-                    <li>Solar inverter installation</li>
-                    <li>Inverter replacement</li>
-                    <li>Hybrid inverter installation</li>
-                    <li>Solar system upgrades</li>
-                    <li>Inverter inspections and testing</li>
-                    <li>Battery-compatible inverter solutions</li>
-                </ul>
-            </div>
-
-            <!-- HEAT PUMP INSTALLATION -->
-            <div class="feature-block">
-                <h3>🔥 Heat Pump Installation</h3>
-                <p style="color: var(--text-muted); margin-top: 8px;">
-                    Improve your home's energy efficiency with a modern heat pump system providing hot water while using electricity to transfer heat directly.
-                </p>
-                <ul class="feature-list">
-                    <li>Heat pump hot water system installation</li>
-                    <li>Heat pump replacement</li>
-                    <li>System upgrades</li>
-                    <li>New residential installations</li>
-                    <li>System inspections</li>
-                    <li>Professional installation and commissioning</li>
-                </ul>
-            </div>
-
-            <!-- WHY CHOOSE US & FREE QUOTE CTA -->
-            <div style="background: var(--bg-dark); color: var(--text-light); border-radius: var(--radius-lg); padding: 40px; margin-top: 30px;">
-                <h3 style="color: var(--accent-sand); font-size: 1.6rem; margin-bottom: 20px;">Why Choose Us?</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
-                    <div>
-                        <strong style="color:var(--primary-orange);">Professional Installation</strong>
-                        <p style="font-size: 0.88rem; color: rgba(250,246,240,0.8); margin-top: 4px;">Our experienced team focuses on safe, reliable and quality installations.</p>
-                    </div>
-                    <div>
-                        <strong style="color:var(--primary-orange);">Energy-Efficient Solutions</strong>
-                        <p style="font-size: 0.88rem; color: rgba(250,246,240,0.8); margin-top: 4px;">We help explore practical ways to reduce energy consumption.</p>
-                    </div>
-                    <div>
-                        <strong style="color:var(--primary-orange);">Residential & Commercial</strong>
-                        <p style="font-size: 0.88rem; color: rgba(250,246,240,0.8); margin-top: 4px;">Solutions available for homes, offices, and commercial premises.</p>
-                    </div>
-                    <div>
-                        <strong style="color:var(--primary-orange);">Quality Workmanship</strong>
-                        <p style="font-size: 0.88rem; color: rgba(250,246,240,0.8); margin-top: 4px;">We deliver neat, reliable installations with attention to system performance.</p>
-                    </div>
-                </div>
-
-                <div style="margin-top: 35px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px;">
-                    <h4 style="font-size: 1.3rem; margin-bottom: 8px;">Thinking about installing solar panels, a battery, inverter or heat pump?</h4>
-                    <p style="color: rgba(250,246,240,0.8); margin-bottom: 20px;">Contact us today for a free quote and discuss the right energy solution for your property.</p>
-                    <button onclick="switchPage('contact')" class="btn btn-orange">Ask for a Free Quote →</button>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- ==========================================================================
-         PAGE 5: CONTACT PAGE WITH DUAL FORMS (WEB3FORMS EMAIL & WHATSAPP)
-         ========================================================================== -->
-    <main id="page-contact" class="page-view">
-        <div class="container">
-            <div class="section-header">
-                <span class="eyebrow-pill">CONTACT US</span>
-                <h2 class="section-title">Get a Free Onsite Quotation</h2>
-                <p class="section-desc">Submit your inquiry via Web3Forms email submission or start an instant WhatsApp conversation.</p>
-            </div>
-
-            <div class="contact-dual-grid">
-                <!-- FORM 1: EMAIL SUBMISSION VIA WEB3FORMS API -->
-                <div class="form-card email-card">
-                    <span class="eyebrow-pill" style="margin-bottom: 8px;">EMAIL SUBMISSION</span>
-                    <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Send Us an Email</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Complete the form below to email Alex Peterson directly.</p>
-
-                    <!-- WEB3FORMS FORM CODE AS INSTRUCTED -->
-                    <form action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="8c045bb0-8bed-4d0a-9ccf-67d1dea873db">
-                        <input type="hidden" name="subject" value="New Free Quote Inquiry - Sinpro Building Maintenance">
-
-                        <div class="form-group">
-                            <label>Name *</label>
-                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Email *</label>
-                            <input type="email" name="email" class="form-control" placeholder="Your Email Address" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Service Requested *</label>
-                            <select name="service" class="form-control">
-                                <option value="Roofing Restoration">Roofing Restoration & Washing</option>
-                                <option value="Solar & Battery System">Solar, Battery, Inverter & Heat Pump</option>
-                                <option value="Gutter & Window Cleaning">Gutter & Window Cleaning</option>
-                                <option value="General Property Clean">General Building Clean</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Message / Property Details *</label>
-                            <textarea name="message" class="form-control" placeholder="Specify your property suburb and service requirements..." required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-orange" style="width: 100%;">Submit Form</button>
-                    </form>
-                </div>
-
-                <!-- FORM 2: WHATSAPP DIRECT CHAT FORM -->
-                <div class="form-card wa-card">
-                    <span class="eyebrow-pill" style="background:rgba(37,211,102,0.1); color:var(--whatsapp-green); margin-bottom: 8px;">INSTANT WHATSAPP</span>
-                    <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Chat on WhatsApp</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Connect instantly on WhatsApp for quick messages and sending photos.</p>
-
-                    <form id="waForm" onsubmit="sendWhatsApp(event)">
-                        <div class="form-group">
-                            <label>Your Name *</label>
-                            <input type="text" id="wa-name" class="form-control" placeholder="Your Name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Suburb & State *</label>
-                            <input type="text" id="wa-location" class="form-control" placeholder="e.g. Werribee VIC or Rockdale NSW" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Service Required *</label>
-                            <select id="wa-service" class="form-control" required>
-                                <option value="Roofing Restoration">Roofing Restoration & Repairs</option>
-                                <option value="Solar & Energy Solutions">Solar, Battery, Inverter & Heat Pump</option>
-                                <option value="Gutter Cleaning">Gutter & Window Cleaning</option>
-                                <option value="General Maintenance">General Property Cleaning</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Message *</label>
-                            <textarea id="wa-msg" class="form-control" placeholder="Describe your property needs..." required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-whatsapp" style="width: 100%;">Start WhatsApp Chat Now 💬</button>
-                    </form>
-
-                    <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border-subtle); font-size: 0.88rem; color: var(--text-muted);">
-                        <strong>Direct Contact:</strong><br>
-                        👤 Managing Director: Alex Peterson<br>
-                        📞 Phone: <a href="tel:0480858790" style="color:var(--primary-orange); font-weight:700;">0480 858 790</a><br>
-                        ✉️ Email: <a href="mailto:alexpeterson876@gmail.com" style="color:var(--primary-orange); font-weight:700;">alexpeterson876@gmail.com</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h3 style="color:var(--accent-sand); margin-bottom:15px;">Sinpro Building Maintenance</h3>
-                    <p style="color: rgba(250,246,240,0.8); font-size: 0.9rem;">
-                        Professional building maintenance, roofing restoration, and solar energy installations.
-                    </p>
-                    <p style="margin-top: 15px; font-weight: 800; color: var(--primary-orange);">
-                        We cover the whole Victoria and NSW
+                    <p class="text-cream/80 text-base max-w-3xl leading-relaxed pt-2">
+                        Take control of your energy costs with reliable renewable energy solutions. We provide professional installation services for solar panels, home battery systems, solar inverters and heat pumps, helping homes and businesses improve energy efficiency and make better use of renewable energy.
                     </p>
                 </div>
 
+                <!-- 4 Solar / Energy Categories Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- 1. Solar Panel Installation -->
+                    <div class="bg-cream border border-sand-light rounded-3xl p-8 shadow-soft-card space-y-4 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-12 h-12 rounded-xl bg-orange-primary text-white flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-solar-panel"></i>
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-espresso">Solar Panel Installation</h3>
+                            <p class="text-sm text-charcoal/80 leading-relaxed">
+                                Generate your own clean electricity with a professionally installed solar panel system.
+                            </p>
+                            <p class="text-xs font-bold text-espresso uppercase tracking-wider">Our solar installation service can include:</p>
+                            <ul class="text-xs space-y-2 text-charcoal/80 font-medium">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Solar system design and planning</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Residential solar panel installation</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Commercial solar panel installation</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Roof-mounted solar systems</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Solar panel replacement and upgrades</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> System inspections and maintenance</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Performance and efficiency checks</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Solar panel cleaning</li>
+                            </ul>
+                            <p class="text-xs text-charcoal/70 italic pt-2">
+                                We help you choose a system based on your property, electricity usage, available roof space and energy requirements.
+                            </p>
+                        </div>
+                        <button onclick="openQuoteModal('Solar Panel Installation')" class="w-full mt-4 bg-orange-primary hover:bg-orange-hover text-white text-xs font-extrabold py-3.5 rounded-xl shadow-orange-glow transition-all">
+                            ASK FOR A FREE SOLAR QUOTE
+                        </button>
+                    </div>
+
+                    <!-- 2. Battery Storage Installation -->
+                    <div class="bg-cream border border-sand-light rounded-3xl p-8 shadow-soft-card space-y-4 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-12 h-12 rounded-xl bg-orange-primary text-white flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-battery-full"></i>
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-espresso">Battery Storage Installation</h3>
+                            <p class="text-sm text-charcoal/80 leading-relaxed">
+                                Store excess solar energy and use it when you need it most. A home battery can help you make greater use of the electricity generated by your solar system, particularly when solar generation is low or during the evening.
+                            </p>
+                            <p class="text-xs font-bold text-espresso uppercase tracking-wider">Our battery services include:</p>
+                            <ul class="text-xs space-y-2 text-charcoal/80 font-medium">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Home battery system installation</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Solar battery integration</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Battery system upgrades</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Battery replacement</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Energy storage solutions</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> System testing and commissioning</li>
+                            </ul>
+                            <p class="text-xs text-charcoal/70 italic pt-2">
+                                Our team can assess your existing solar system and help determine whether battery storage is suitable for your property.
+                            </p>
+                        </div>
+                        <button onclick="openQuoteModal('Battery Storage Installation')" class="w-full mt-4 bg-orange-primary hover:bg-orange-hover text-white text-xs font-extrabold py-3.5 rounded-xl shadow-orange-glow transition-all">
+                            ASK FOR A FREE BATTERY QUOTE
+                        </button>
+                    </div>
+
+                    <!-- 3. Solar Inverter Installation -->
+                    <div class="bg-cream border border-sand-light rounded-3xl p-8 shadow-soft-card space-y-4 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-12 h-12 rounded-xl bg-orange-primary text-white flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-espresso">Solar Inverter Installation</h3>
+                            <p class="text-sm text-charcoal/80 leading-relaxed">
+                                The inverter is an essential component of a solar energy system. It converts the electricity generated by your solar panels into usable electricity for your home or business.
+                            </p>
+                            <p class="text-xs font-bold text-espresso uppercase tracking-wider">We provide:</p>
+                            <ul class="text-xs space-y-2 text-charcoal/80 font-medium">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Solar inverter installation</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Inverter replacement</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Hybrid inverter installation</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Solar system upgrades</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Inverter inspections and testing</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Battery-compatible inverter solutions</li>
+                            </ul>
+                            <p class="text-xs text-charcoal/70 italic pt-2">
+                                We can work with new solar installations as well as existing systems requiring an inverter upgrade or replacement.
+                            </p>
+                        </div>
+                        <button onclick="openQuoteModal('Solar Inverter Installation')" class="w-full mt-4 bg-orange-primary hover:bg-orange-hover text-white text-xs font-extrabold py-3.5 rounded-xl shadow-orange-glow transition-all">
+                            ASK FOR A FREE INVERTER QUOTE
+                        </button>
+                    </div>
+
+                    <!-- 4. Heat Pump Installation -->
+                    <div class="bg-cream border border-sand-light rounded-3xl p-8 shadow-soft-card space-y-4 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="w-12 h-12 rounded-xl bg-orange-primary text-white flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-temperature-arrow-up"></i>
+                            </div>
+                            <h3 class="text-2xl font-extrabold text-espresso">Heat Pump Installation</h3>
+                            <p class="text-sm text-charcoal/80 leading-relaxed">
+                                Improve your home's energy efficiency with a modern heat pump system. Heat pumps can provide efficient heating and hot water while using electricity to transfer heat rather than generating heat directly.
+                            </p>
+                            <p class="text-xs font-bold text-espresso uppercase tracking-wider">Our heat pump services include:</p>
+                            <ul class="text-xs space-y-2 text-charcoal/80 font-medium">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Heat pump hot water system installation</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Heat pump replacement</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> System upgrades</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> New residential installations</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> System inspections</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-primary"></i> Professional installation and commissioning</li>
+                            </ul>
+                            <p class="text-xs text-charcoal/70 italic pt-2">
+                                We can help you select a suitable heat pump solution based on your property's requirements, hot water usage and existing system.
+                            </p>
+                        </div>
+                        <button onclick="openQuoteModal('Heat Pump Installation')" class="w-full mt-4 bg-orange-primary hover:bg-orange-hover text-white text-xs font-extrabold py-3.5 rounded-xl shadow-orange-glow transition-all">
+                            ASK FOR A FREE HEAT PUMP QUOTE
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Why Choose Us Section -->
+                <div class="bg-sand-light/80 border border-sand-light rounded-3xl p-8 sm:p-10 space-y-6">
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-espresso">Why Choose Us?</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-espresso text-base flex items-center gap-2"><i class="fa-solid fa-user-shield text-orange-primary"></i> Professional Installation</h4>
+                            <p class="text-xs text-charcoal/70">Our experienced team focuses on safe, reliable and quality installations.</p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-espresso text-base flex items-center gap-2"><i class="fa-solid fa-leaf text-orange-primary"></i> Energy-Efficient Solutions</h4>
+                            <p class="text-xs text-charcoal/70">We help customers explore practical ways to reduce energy consumption and make better use of renewable energy.</p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-espresso text-base flex items-center gap-2"><i class="fa-solid fa-building text-orange-primary"></i> Residential & Commercial</h4>
+                            <p class="text-xs text-charcoal/70">Solutions are available for homes, offices, investment properties and commercial premises.</p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-espresso text-base flex items-center gap-2"><i class="fa-solid fa-gears text-orange-primary"></i> Complete Energy Solutions</h4>
+                            <p class="text-xs text-charcoal/70">From solar panels and batteries to inverters and heat pumps, we can help coordinate multiple energy solutions for your property.</p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-espresso text-base flex items-center gap-2"><i class="fa-solid fa-award text-orange-primary"></i> Quality Workmanship</h4>
+                            <p class="text-xs text-charcoal/70">We aim to deliver neat, reliable installations with attention to safety and system performance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Get A Free Quote Section Callout -->
+                <div class="bg-espresso text-cream rounded-3xl p-8 sm:p-10 text-center space-y-4">
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Get a Free Quote</h3>
+                    <p class="text-cream/80 text-sm max-w-2xl mx-auto">
+                        Thinking about installing solar panels, a battery, inverter or heat pump? Contact us today for a free quote and discuss the right energy solution for your property.
+                    </p>
+                    <button onclick="openQuoteModal('Solar Energy System')" class="bg-orange-primary hover:bg-orange-hover text-white text-xs font-extrabold px-8 py-4 rounded-xl shadow-orange-glow transition-all">
+                        CONTACT US TODAY FOR A FREE QUOTE
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- PAGE 4: LOCATIONS DIRECTORY (#locations)   -->
+        <!-- ========================================== -->
+        <section id="view-locations" class="page-view hidden space-y-12 py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary bg-orange-primary/10 px-4 py-1.5 rounded-full">
+                        Regional Operational Coverage
+                    </span>
+                    
+                    <!-- BOLD COVERAGE HIGHLIGHT LINE -->
+                    <h2 class="text-2xl sm:text-3xl font-black text-espresso uppercase tracking-wide border-2 border-orange-primary p-4 rounded-2xl bg-cream shadow-md">
+                        <strong>WE COVER THE WHOLE VICTORIA AND NSW</strong>
+                    </h2>
+
+                    <p class="text-charcoal/70 text-base pt-2">
+                        Our mobile maintenance fleets service all metro and suburban regions across Victoria and New South Wales.
+                    </p>
+                </div>
+
+                <!-- Dual State Location Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <!-- Victoria Operations -->
+                    <div class="bg-cream border-2 border-sand-light rounded-3xl p-8 shadow-soft-card flex flex-col justify-between space-y-6">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-sand-light pb-4 mb-6">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-orange-primary text-white flex items-center justify-center font-bold text-lg">
+                                        VIC
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-extrabold text-espresso">Victoria Operations</h3>
+                                        <p class="text-xs text-charcoal/70">Statewide Maintenance & Solar Coverage</p>
+                                    </div>
+                                </div>
+                                <span class="bg-espresso text-cream text-[10px] font-bold px-3 py-1 rounded-full uppercase">Victoria</span>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="p-4 rounded-2xl bg-sand-light/60">
+                                    <h4 class="font-bold text-espresso text-base"><i class="fa-solid fa-location-dot text-orange-primary mr-1"></i> Melbourne Metro & Suburbs</h4>
+                                    <p class="text-xs text-charcoal/70 mt-1">Coburg North, Werribee, Dandenong, Point Cook, Geelong, and surrounding Victorian regions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-espresso"><i class="fa-solid fa-van-shuttle text-orange-primary mr-1"></i> Full VIC Service Coverage</span>
+                            <a href="https://wa.me/61480858790" target="_blank" class="text-xs font-extrabold text-orange-primary hover:underline">Contact VIC Team →</a>
+                        </div>
+                    </div>
+
+                    <!-- New South Wales Operations -->
+                    <div class="bg-cream border-2 border-sand-light rounded-3xl p-8 shadow-soft-card flex flex-col justify-between space-y-6">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-sand-light pb-4 mb-6">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-orange-primary text-white flex items-center justify-center font-bold text-lg">
+                                        NSW
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-extrabold text-espresso">New South Wales Operations</h3>
+                                        <p class="text-xs text-charcoal/70">Statewide Maintenance & Solar Coverage</p>
+                                    </div>
+                                </div>
+                                <span class="bg-espresso text-cream text-[10px] font-bold px-3 py-1 rounded-full uppercase">New South Wales</span>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="p-4 rounded-2xl bg-sand-light/60">
+                                    <h4 class="font-bold text-espresso text-base"><i class="fa-solid fa-location-dot text-orange-primary mr-1"></i> Sydney Metro & Suburbs</h4>
+                                    <p class="text-xs text-charcoal/70 mt-1">St Marys, Rockdale, Campbelltown, Newcastle, Wollongong, and greater NSW regions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-sand-light flex items-center justify-between">
+                            <span class="text-xs font-bold text-espresso"><i class="fa-solid fa-van-shuttle text-orange-primary mr-1"></i> Full NSW Service Coverage</span>
+                            <a href="https://wa.me/61480858790" target="_blank" class="text-xs font-extrabold text-orange-primary hover:underline">Contact NSW Team →</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ========================================== -->
+        <!-- PAGE 5: CONTACT US (#contact)              -->
+        <!-- ========================================== -->
+        <section id="view-contact" class="page-view hidden space-y-12 py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Left Column: Contact Details Container -->
+                    <div class="lg:col-span-5 bg-espresso text-cream p-8 sm:p-10 rounded-3xl shadow-xl space-y-8">
+                        <div>
+                            <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary">Get In Touch</span>
+                            <h2 class="text-3xl font-extrabold text-white mt-1">Contact Sinpro Maintenance</h2>
+                            <p class="text-xs text-cream/70 mt-2">Reach out via WhatsApp or submit our quick email form to ask for a free quote.</p>
+                        </div>
+
+                        <div class="space-y-6 text-sm">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-green-600 text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-peach uppercase font-bold block">WhatsApp Number</span>
+                                    <a href="https://wa.me/61480858790" target="_blank" class="text-lg font-extrabold text-white hover:text-peach transition-colors">+61 480 858 790</a>
+                                    <p class="text-[11px] text-cream/60">Instant WhatsApp Message & Quote</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-orange-primary text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-envelope text-lg"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-peach uppercase font-bold block">Email Contact</span>
+                                    <a href="mailto:sinprobuildingmaintenance@gmail.com" class="text-sm font-bold text-white hover:text-orange-primary transition-colors">sinprobuildingmaintenance@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-orange-primary text-white flex items-center justify-center shrink-0">
+                                    <i class="fa-brands fa-facebook-f text-lg"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-peach uppercase font-bold block">Facebook Page</span>
+                                    <a href="https://www.facebook.com/profile.php?id=61584064917621" target="_blank" class="text-sm font-bold text-white hover:text-orange-primary transition-colors underline">
+                                        Sinpro Facebook Profile
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Service Coverage Note -->
+                        <div class="p-4 rounded-2xl bg-espresso-light border border-cream/10 space-y-1">
+                            <h4 class="text-xs font-bold uppercase text-peach">Statewide Coverage</h4>
+                            <p class="text-xs text-cream/80">We cover the whole Victoria and NSW for residential, commercial, roofing and solar installation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: 2 Forms (WhatsApp Form & Web3Forms Email) -->
+                    <div class="lg:col-span-7 space-y-8">
+                        
+                        <!-- FORM 1: WHATSAPP DIRECT FORM -->
+                        <div class="bg-cream border border-sand-light p-6 sm:p-8 rounded-3xl shadow-soft-card space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-green-600 text-white flex items-center justify-center font-bold">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-extrabold uppercase tracking-widest text-green-600">Option 1: Quick Connect</span>
+                                    <h3 class="text-xl font-extrabold text-espresso">Choose WhatsApp Contact</h3>
+                                </div>
+                            </div>
+
+                            <form id="whatsapp-direct-form" onsubmit="handleWhatsAppSubmit(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Your Name</label>
+                                    <input type="text" id="wa-name" required placeholder="Full Name" class="w-full bg-sand-light/50 border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:ring-2 focus:ring-green-600">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Your Service / Quote Request</label>
+                                    <textarea id="wa-message" required rows="3" placeholder="Tell us what service you need (Roofing, Solar, Gutters, Cleaning)..." class="w-full bg-sand-light/50 border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:ring-2 focus:ring-green-600 resize-none"></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-extrabold text-sm py-3.5 rounded-xl transition-all flex items-center justify-center gap-2">
+                                    <i class="fa-brands fa-whatsapp text-base"></i>
+                                    <span>Send Message via WhatsApp</span>
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- FORM 2: EMAIL SUBMISSION FORM (Web3Forms Exact Code Integration) -->
+                        <div class="bg-cream border border-sand-light p-6 sm:p-8 rounded-3xl shadow-soft-card space-y-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-orange-primary text-white flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary">Option 2: Direct Email</span>
+                                    <h3 class="text-xl font-extrabold text-espresso">Choose Email Contact</h3>
+                                </div>
+                            </div>
+
+                            <!-- Client Specified Web3Forms Form Code -->
+                            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                                <input type="hidden" name="access_key" value="8c045bb0-8bed-4d0a-9ccf-67d1dea873db">
+                                
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Name</label>
+                                    <input type="text" name="name" required placeholder="Your Name" class="w-full bg-sand-light/50 border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Email</label>
+                                    <input type="email" name="email" required placeholder="your.email@example.com" class="w-full bg-sand-light/50 border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Message / Request a Free Quote</label>
+                                    <textarea name="message" required rows="4" placeholder="Please ask for a free quote or describe your project requirements..." class="w-full bg-sand-light/50 border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:ring-2 focus:ring-orange-primary resize-none"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-orange-primary hover:bg-orange-hover text-white font-extrabold text-sm py-4 rounded-xl shadow-orange-glow transition-all">
+                                    Submit Form
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- DYNAMIC FREE QUOTE MODAL                   -->
+    <!-- ========================================== -->
+    <div id="quote-modal" class="fixed inset-0 z-50 hidden bg-espresso/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-cream border border-sand-light max-w-xl w-full rounded-3xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto space-y-6">
+            
+            <button onclick="closeQuoteModal()" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-sand-light text-espresso hover:text-orange-primary flex items-center justify-center font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-orange-primary">Free Quote Request</span>
+                <h3 class="text-2xl font-extrabold text-espresso">Ask For A Free Quote</h3>
+            </div>
+
+            <!-- Web3Forms inside Modal -->
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                <input type="hidden" name="access_key" value="8c045bb0-8bed-4d0a-9ccf-67d1dea873db">
+
                 <div>
-                    <h4 style="color:#FFF; margin-bottom:15px;">Quick Links</h4>
-                    <ul style="list-style:none; line-height:2.2;">
-                        <li><a href="#home" onclick="switchPage('home')">Home</a></li>
-                        <li><a href="#services" onclick="switchPage('services')">Services</a></li>
-                        <li><a href="#locations" onclick="switchPage('locations')">Locations</a></li>
-                        <li><a href="#solar-roofing" onclick="switchPage('solar-roofing')">Solar & Roofing</a></li>
-                        <li><a href="#contact" onclick="switchPage('contact')">Ask for a Free Quote</a></li>
+                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Required Service</label>
+                    <select name="service" id="modal-service-select" class="w-full bg-sand-light border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso font-semibold focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                        <option value="Roofing Restoration">Roofing Restoration & Maintenance</option>
+                        <option value="Solar Panel Installation">Solar Panel Installation</option>
+                        <option value="Battery Storage">Battery Storage Installation</option>
+                        <option value="Solar Inverter">Solar Inverter Installation</option>
+                        <option value="Heat Pump Systems">Heat Pump System Installation</option>
+                        <option value="Gutter Cleaning">Gutter Cleaning & Flush</option>
+                        <option value="Window Cleaning">Window & Screen Cleaning</option>
+                        <option value="End of Lease Cleaning">End of Lease Deep Clean</option>
+                        <option value="Pressure Washing">Driveway & Pressure Wash</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Your Name</label>
+                    <input type="text" name="name" required placeholder="Full Name" class="w-full bg-sand-light border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Your Email</label>
+                    <input type="email" name="email" required placeholder="your.email@example.com" class="w-full bg-sand-light border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Suburb / Property Details</label>
+                    <textarea name="message" required rows="3" placeholder="Specify your suburb in Victoria or NSW and ask for a free quote..." class="w-full bg-sand-light border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none resize-none"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-orange-primary hover:bg-orange-hover text-white font-extrabold text-sm py-4 rounded-xl shadow-orange-glow transition-all">
+                    Submit Form
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast-notification" class="fixed bottom-6 right-6 z-50 hidden bg-espresso text-cream px-6 py-4 rounded-2xl shadow-2xl border border-orange-primary flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-orange-primary text-white flex items-center justify-center font-bold">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div>
+            <h5 class="text-sm font-bold text-white" id="toast-title">Success</h5>
+            <p class="text-xs text-cream/80" id="toast-message">Your request has been received!</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-espresso text-cream border-t border-cream/10 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-orange-primary text-white rounded-lg flex items-center justify-center font-bold">
+                            S
+                        </div>
+                        <span class="text-xl font-extrabold text-white">SINPRO</span>
+                    </div>
+                    <p class="text-xs text-cream/70 leading-relaxed">
+                        Professional property maintenance, roofing restoration, solar, battery & heat pump installations across all of Victoria and New South Wales.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-extrabold uppercase text-peach mb-3">Quick Navigation</h5>
+                    <ul class="text-xs space-y-2 text-cream/80 font-medium">
+                        <li><a href="#home" class="hover:text-orange-primary">Home</a></li>
+                        <li><a href="#services" class="hover:text-orange-primary">Services Hub</a></li>
+                        <li><a href="#solar" class="hover:text-orange-primary">Solar & Renewable Energy</a></li>
+                        <li><a href="#locations" class="hover:text-orange-primary">Locations</a></li>
+                        <li><a href="#contact" class="hover:text-orange-primary">Contact Us</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 style="color:#FFF; margin-bottom:15px;">Contact Info</h4>
-                    <p style="line-height: 2;">
-                        <strong>Owner:</strong> Alex Peterson<br>
-                        <strong>Phone:</strong> 0480 858 790<br>
-                        <strong>Email:</strong> alexpeterson876@gmail.com<br>
-                        <strong>Coverage:</strong> Victoria & New South Wales
+                    <h5 class="text-xs font-extrabold uppercase text-peach mb-3">Contact Information</h5>
+                    <ul class="text-xs space-y-2 text-cream/80">
+                        <li><i class="fa-brands fa-whatsapp text-green-400 mr-2"></i> +61 480 858 790</li>
+                        <li><i class="fa-solid fa-envelope text-orange-primary mr-2"></i> sinprobuildingmaintenance@gmail.com</li>
+                        <li><i class="fa-brands fa-facebook text-orange-primary mr-2"></i> Sinpro Facebook Page</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xs font-extrabold uppercase text-peach mb-3">State Coverage</h5>
+                    <p class="text-xs text-cream/70 leading-relaxed">
+                        <strong>We cover the whole Victoria and NSW.</strong><br>
+                        Contact us today for a free quote on any property or energy project.
                     </p>
                 </div>
+
             </div>
 
-            <div class="footer-bottom">
-                &copy; 2026 Sinpro Building Maintenance. All rights reserved.
+            <div class="pt-8 border-t border-cream/10 text-center text-xs text-cream/50 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>© 2026 Sinpro Building Maintenance. All Rights Reserved.</p>
+                <p>Coverage: Victoria & New South Wales</p>
             </div>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT FOR ROUTING & WHATSAPP GENERATOR -->
+    <!-- JAVASCRIPT SPA ROUTING & INTERACTIVITY -->
     <script>
-        function switchPage(pageId) {
-            const pages = document.querySelectorAll('.page-view');
-            pages.forEach(p => p.classList.remove('active'));
-
-            const targetPage = document.getElementById('page-' + pageId);
-            if (targetPage) {
-                targetPage.classList.active ? null : targetPage.classList.add('active');
-            }
-
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + pageId) {
-                    link.classList.add('active');
+        // SPA Hash-based Routing Engine
+        function handleRouting() {
+            const hash = window.location.hash || '#home';
+            const views = ['home', 'services', 'solar', 'locations', 'contact'];
+            
+            views.forEach(view => {
+                const element = document.getElementById(`view-${view}`);
+                const navLink = document.getElementById(`nav-${view}`);
+                
+                if (hash === `#${view}`) {
+                    if (element) element.classList.remove('hidden');
+                    if (navLink) navLink.classList.add('active');
+                } else {
+                    if (element) element.classList.add('hidden');
+                    if (navLink) navLink.classList.remove('active');
                 }
             });
-
-            document.getElementById('navLinks').classList.remove('mobile-active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        window.addEventListener('hashchange', () => {
-            const hash = window.location.hash.replace('#', '') || 'home';
-            switchPage(hash);
-        });
+        window.addEventListener('hashchange', handleRouting);
+        window.addEventListener('load', handleRouting);
 
-        window.addEventListener('load', () => {
-            const hash = window.location.hash.replace('#', '') || 'home';
-            switchPage(hash);
-        });
-
+        // Mobile Menu Toggle
         function toggleMobileMenu() {
-            document.getElementById('navLinks').classList.toggle('mobile-active');
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').classList.add('hidden');
         }
 
-        function sendWhatsApp(e) {
-            if(e) e.preventDefault();
-            const name = document.getElementById('wa-name').value;
-            const location = document.getElementById('wa-location').value;
-            const service = document.getElementById('wa-service').value;
-            const msg = document.getElementById('wa-msg').value;
-
-            const text = `Hi Alex Peterson, I would like to ask for a free quote.%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Location:* ${encodeURIComponent(location)}%0A*Service:* ${encodeURIComponent(service)}%0A*Details:* ${encodeURIComponent(msg)}`;
+        // Modal Control
+        function openQuoteModal(serviceName) {
+            const modal = document.getElementById('quote-modal');
+            const select = document.getElementById('modal-service-select');
             
+            if (serviceName && select) {
+                for (let option of select.options) {
+                    if (option.value.toLowerCase().includes(serviceName.toLowerCase())) {
+                        select.value = option.value;
+                        break;
+                    }
+                }
+            }
+            modal.classList.remove('hidden');
+        }
+
+        function closeQuoteModal() {
+            document.getElementById('quote-modal').classList.add('hidden');
+        }
+
+        // WhatsApp Form Handler
+        function handleWhatsAppSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('wa-name').value;
+            const message = document.getElementById('wa-message').value;
+            const text = encodeURIComponent(`Hello Sinpro Maintenance, my name is ${name}. ${message}`);
             window.open(`https://wa.me/61480858790?text=${text}`, '_blank');
+        }
+
+        // Toast Notification Display
+        function showToast(title, message) {
+            const toast = document.getElementById('toast-notification');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-message').innerText = message;
+            toast.classList.remove('hidden');
+            
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        function handleHeroSubmit(e) {
+            e.preventDefault();
+            showToast('Quote Requested!', 'Thank you! We will get back to you with a free quote shortly.');
+            e.target.reset();
         }
     </script>
 </body>
