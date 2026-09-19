@@ -959,6 +959,33 @@
                                     <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Your Name</label>
                                     <input type="text" id="wa-name" required placeholder="Full Name" class="w-full bg-sand-light/50 border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:ring-2 focus:ring-green-600">
                                 </div>
+
+                                <!-- LOCATION SECTION ADDED FOR WHATSAPP -->
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Location</label>
+                                    <select id="wa-location" required class="w-full bg-sand-light/50 border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso font-semibold focus:outline-none focus:ring-2 focus:ring-green-600">
+                                        <option value="" disabled selected>-- Select Your Location --</option>
+                                        <optgroup label="Victoria (VIC)">
+                                            <option value="Coburg North, VIC">Coburg North</option>
+                                            <option value="Werribee, VIC">Werribee</option>
+                                            <option value="Dandenong, VIC">Dandenong</option>
+                                            <option value="Point Cook, VIC">Point Cook</option>
+                                            <option value="Geelong, VIC">Geelong</option>
+                                            <option value="Greater Melbourne Metro, VIC">Greater Melbourne Metro</option>
+                                            <option value="Other Victoria Location">Other Victoria Location</option>
+                                        </optgroup>
+                                        <optgroup label="New South Wales (NSW)">
+                                            <option value="St Marys, NSW">St Marys</option>
+                                            <option value="Rockdale, NSW">Rockdale</option>
+                                            <option value="Campbelltown, NSW">Campbelltown</option>
+                                            <option value="Newcastle, NSW">Newcastle</option>
+                                            <option value="Wollongong, NSW">Wollongong</option>
+                                            <option value="Greater Sydney Metro, NSW">Greater Sydney Metro</option>
+                                            <option value="Other NSW Location">Other NSW Location</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+
                                 <div>
                                     <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Your Service / Quote Request</label>
                                     <textarea id="wa-message" required rows="3" placeholder="Tell us what service you need (Roofing, Solar, Gutters, Cleaning)..." class="w-full bg-sand-light/50 border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:ring-2 focus:ring-green-600 resize-none"></textarea>
@@ -994,6 +1021,32 @@
                                 <div>
                                     <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Email</label>
                                     <input type="email" name="email" required placeholder="your.email@example.com" class="w-full bg-sand-light/50 border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                                </div>
+
+                                <!-- LOCATION SECTION ADDED FOR EMAIL FORM -->
+                                <div>
+                                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Location</label>
+                                    <select name="location" required class="w-full bg-sand-light/50 border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso font-semibold focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                                        <option value="" disabled selected>-- Select Your Location --</option>
+                                        <optgroup label="Victoria (VIC)">
+                                            <option value="Coburg North, VIC">Coburg North</option>
+                                            <option value="Werribee, VIC">Werribee</option>
+                                            <option value="Dandenong, VIC">Dandenong</option>
+                                            <option value="Point Cook, VIC">Point Cook</option>
+                                            <option value="Geelong, VIC">Geelong</option>
+                                            <option value="Greater Melbourne Metro, VIC">Greater Melbourne Metro</option>
+                                            <option value="Other Victoria Location">Other Victoria Location</option>
+                                        </optgroup>
+                                        <optgroup label="New South Wales (NSW)">
+                                            <option value="St Marys, NSW">St Marys</option>
+                                            <option value="Rockdale, NSW">Rockdale</option>
+                                            <option value="Campbelltown, NSW">Campbelltown</option>
+                                            <option value="Newcastle, NSW">Newcastle</option>
+                                            <option value="Wollongong, NSW">Wollongong</option>
+                                            <option value="Greater Sydney Metro, NSW">Greater Sydney Metro</option>
+                                            <option value="Other NSW Location">Other NSW Location</option>
+                                        </optgroup>
+                                    </select>
                                 </div>
 
                                 <div>
@@ -1060,8 +1113,33 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Suburb / Property Details</label>
-                    <textarea name="message" required rows="3" placeholder="Specify your suburb in Victoria or NSW and ask for a free quote..." class="w-full bg-sand-light border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none resize-none"></textarea>
+                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Location</label>
+                    <select name="location" required class="w-full bg-sand-light border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso font-semibold focus:outline-none focus:ring-2 focus:ring-orange-primary">
+                        <option value="" disabled selected>-- Select Your Location --</option>
+                        <optgroup label="Victoria (VIC)">
+                            <option value="Coburg North, VIC">Coburg North</option>
+                            <option value="Werribee, VIC">Werribee</option>
+                            <option value="Dandenong, VIC">Dandenong</option>
+                            <option value="Point Cook, VIC">Point Cook</option>
+                            <option value="Geelong, VIC">Geelong</option>
+                            <option value="Greater Melbourne Metro, VIC">Greater Melbourne Metro</option>
+                            <option value="Other Victoria Location">Other Victoria Location</option>
+                        </optgroup>
+                        <optgroup label="New South Wales (NSW)">
+                            <option value="St Marys, NSW">St Marys</option>
+                            <option value="Rockdale, NSW">Rockdale</option>
+                            <option value="Campbelltown, NSW">Campbelltown</option>
+                            <option value="Newcastle, NSW">Newcastle</option>
+                            <option value="Wollongong, NSW">Wollongong</option>
+                            <option value="Greater Sydney Metro, NSW">Greater Sydney Metro</option>
+                            <option value="Other NSW Location">Other NSW Location</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-charcoal/70 mb-1">Property / Project Details</label>
+                    <textarea name="message" required rows="3" placeholder="Specify project requirements..." class="w-full bg-sand-light border border-sand-light rounded-xl px-4 py-3 text-sm text-espresso focus:outline-none resize-none"></textarea>
                 </div>
 
                 <button type="submit" class="w-full bg-orange-primary hover:bg-orange-hover text-white font-extrabold text-sm py-4 rounded-xl shadow-orange-glow transition-all">
@@ -1190,12 +1268,13 @@
             document.getElementById('quote-modal').classList.add('hidden');
         }
 
-        // WhatsApp Form Handler
+        // WhatsApp Form Handler (Appends Name, Location & Message)
         function handleWhatsAppSubmit(e) {
             e.preventDefault();
             const name = document.getElementById('wa-name').value;
+            const location = document.getElementById('wa-location').value;
             const message = document.getElementById('wa-message').value;
-            const text = encodeURIComponent(`Hello Sinpro Maintenance, my name is ${name}. ${message}`);
+            const text = encodeURIComponent(`Hello Sinpro Maintenance,\n\nName: ${name}\nLocation: ${location}\nRequest: ${message}`);
             window.open(`https://wa.me/61480858790?text=${text}`, '_blank');
         }
 
