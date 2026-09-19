@@ -551,10 +551,21 @@
 
     <!-- MAIN HEADER NAVIGATION WITH LOGO HOLDER -->
     <header class="header-nav">
-        <a href="#home" onclick="switchPage('home')" class="logo-container">
-            <img src="logo.png" alt="Sinpro Building Maintenance Logo" class="logo-img">
+       <a href="#home" onclick="switchPage('home')" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+            <div style="background-color: #722E1A; width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-weight: 800; font-size: 1.45rem; color: #1A110E; line-height: 1; letter-spacing: -0.5px;">
+                    SINPRO<span style="color: var(--primary-orange);">.</span>
+                </span>
+                <span style="font-weight: 700; font-size: 0.65rem; color: #665A55; letter-spacing: 1.5px; margin-top: 3px; text-transform: uppercase;">
+                    Building Maintenance
+                </span>
+            </div>
         </a>
-
         <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
 
         <ul class="nav-links" id="navLinks">
